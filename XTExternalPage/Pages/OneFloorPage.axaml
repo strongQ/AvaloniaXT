@@ -1,0 +1,74 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			  xmlns:model="using:XTExternalPage.Models"
+			 xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+			xmlns:selector="using:XTExternalPage.Selectors"
+			xmlns:cp="using:XTExternalPage.Components"
+			 xmlns:vm="using:XTExternalPage.ViewModels"
+			 x:DataType="vm:OneFloorViewModel"
+			xmlns:theme="clr-namespace:SukiUI.Theme;assembly=SukiUI"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="XTExternalPage.OneFloorPage">
+
+	<UserControl.Styles>
+		<Style Selector="Button">
+			<Setter Property="Content" Value="Reload" />
+			<Setter Property="theme:ButtonExtensions.ShowProgress" Value="{Binding IsLoading}" />
+			<Setter Property="Command" Value="{Binding InitialCommand}" />
+		</Style>
+	</UserControl.Styles>
+
+	<ScrollViewer x:Name="view" HorizontalScrollBarVisibility="Auto" PointerReleased="PointerReleasedHandler" PointerMoved="PointerMovedHandler"  PointerPressed="PointerPressedHandler">
+		<Panel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+		<ItemsControl HorizontalAlignment="Left" VerticalAlignment="Top" Width="{Binding Width}" Height="{Binding Height}"  ItemsSource="{Binding Datas}" >
+
+			<ItemsControl.ItemsPanel>
+				<ItemsPanelTemplate>
+					
+					<Canvas  />
+					
+				</ItemsPanelTemplate>
+			</ItemsControl.ItemsPanel>
+			<ItemsControl.ItemContainerTheme>
+				<ControlTheme TargetType="ContentPresenter">
+					<Setter x:DataType="model:UnitTagModel" Property="Canvas.Top" Value="{Binding Top}"/>
+					<Setter x:DataType="model:UnitTagModel" Property="Canvas.Left" Value="{Binding Left}"/>
+				</ControlTheme>
+
+			</ItemsControl.ItemContainerTheme>
+
+
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<ContentControl Content="{Binding}" />
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+			<ItemsControl.DataTemplates>
+				<selector:EcsTagSelector>
+					
+					<DataTemplate x:Key="Other">
+						<cp:UnitOther></cp:UnitOther>
+					</DataTemplate>
+					<!--<DataTemplate x:Key="XX">
+						<cp:UnitXX></cp:UnitXX>
+					</DataTemplate>-->
+				</selector:EcsTagSelector>
+			</ItemsControl.DataTemplates>
+
+
+
+
+		</ItemsControl>
+		
+		<suki:Loading IsVisible="{Binding IsLoading}"/>
+
+	    <Button Classes="Outlined Accent" VerticalAlignment="Top" HorizontalAlignment="Right"></Button>
+
+		</Panel>
+	</ScrollViewer>
+	
+	
+	
+</UserControl>

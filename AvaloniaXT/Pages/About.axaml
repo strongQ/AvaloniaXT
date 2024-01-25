@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaXT.About">
+	<suki:GlassCard>
+		<suki:GroupBox Header="About" HorizontalAlignment="Center" VerticalAlignment="Center">
+			
+				<StackPanel Orientation="Vertical">
+					<RadioButton Classes="GigaChips"
+								 GroupName="R3"
+								 IsChecked="True">
+						<StackPanel>
+							<TextBlock FontSize="18"
+									   FontWeight="DemiBold"
+									   Text="Avalonia App" />
+							<TextBlock Margin="0,8,0,0"
+									   Foreground="{DynamicResource SukiLowText}"
+									   Text="Power By SukiUI." />
+						</StackPanel>
+					</RadioButton>
+					<RadioButton Classes="GigaChips" GroupName="R3">
+						<StackPanel>
+							<TextBlock FontSize="18"
+									   FontWeight="DemiBold"
+									   Text="Cross Platform" />
+							<TextBlock Margin="0,8,0,0"
+									   Foreground="{DynamicResource SukiLowText}"
+									   Text="Can Build Linux、Windows、Mac、WebAssamble." />
+						</StackPanel>
+					</RadioButton>
+					<RadioButton Classes="GigaChips" GroupName="R3">
+						<StackPanel>
+							<TextBlock FontSize="18"
+									   FontWeight="DemiBold"
+									   Text="Use Action" />
+							<TextBlock Margin="0,8,0,0"
+									   Foreground="{DynamicResource SukiLowText}"
+									   Text="XTPageBase Implement And To IOC Services." />
+						</StackPanel>
+					</RadioButton>
+				</StackPanel>
+			
+		</suki:GroupBox>
+	</suki:GlassCard>
+</UserControl>

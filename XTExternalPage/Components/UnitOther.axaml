@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			  xmlns:model="using:XTExternalPage.Models"
+			 x:DataType="model:UnitTagModel"
+             x:Class="XTExternalPage.Components.UnitOther">
+	<UserControl.Styles>
+		<Style Selector="Border">
+			<Setter Property="BorderBrush" Value="Black"/>
+			<Setter Property="Background" Value="Yellow"/>
+		</Style>
+		<Style Selector="Border:pointerover">
+			<Setter Property="BorderBrush" Value="#F5BEB7"/>
+			<Setter Property="Background" Value="#FBE9E7"/>
+		</Style>
+		<Style Selector="TextBlock">
+			<Setter Property="FontSize" Value="10"/>
+			<Setter Property="Height" Value="10"/>
+			<Setter Property="Foreground" Value="Black"/>
+		</Style>
+	</UserControl.Styles>
+	<Border  BorderThickness="1"  Width="{Binding Width}" Height="{Binding Height}"   >
+		<ToolTip.Tip>
+			<StackPanel Width="100" Height="30">
+				<TextBlock Text="{Binding Condition}"></TextBlock>
+			</StackPanel>
+		</ToolTip.Tip>
+
+		<StackPanel   HorizontalAlignment="Center" VerticalAlignment="Center">
+			<TextBlock VerticalAlignment="Bottom"  Text="{Binding Condition}">
+
+			</TextBlock>
+			<TextBlock Margin="0,-2,0,0" VerticalAlignment="Top"   Text="{Binding Id}">
+
+			</TextBlock>
+		</StackPanel>
+
+
+	</Border>
+</UserControl>

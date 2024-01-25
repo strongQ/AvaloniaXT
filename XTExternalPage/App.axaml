@@ -1,0 +1,45 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:xt="clr-namespace:AvaloniaXT;assembly=AvaloniaXT"
+			xmlns:sukiUi="clr-namespace:SukiUI;assembly=SukiUI"
+			
+			  xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             x:Class="XTExternalPage.App"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <xt:ViewLocator/>
+    </Application.DataTemplates>
+
+    <Application.Styles>
+		
+		
+		<sukiUi:SukiTheme ThemeColor="Blue"  />
+
+		<avalonia:MaterialIconStyles />
+
+		
+		
+	
+      
+    </Application.Styles>
+	<TrayIcon.Icons>
+		<TrayIcons>
+			<TrayIcon Icon="/Assets/alarm.ico" Clicked="NativeMenuItem_Show"
+					  ToolTipText="AvaloniaXT">
+				<TrayIcon.Menu>
+					<NativeMenu>
+						<NativeMenuItem Header="Settings">
+							<NativeMenu>
+								<NativeMenuItem Header="Show" Click="NativeMenuItem_Show"  />
+								<NativeMenuItem Header="Exit" Click="NativeMenuItem_Click"  />							
+							</NativeMenu>
+						</NativeMenuItem>
+					</NativeMenu>
+				</TrayIcon.Menu>
+			</TrayIcon>
+		</TrayIcons>
+	</TrayIcon.Icons>
+    
+</Application>

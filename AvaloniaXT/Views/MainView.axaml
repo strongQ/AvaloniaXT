@@ -1,0 +1,62 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaXT.ViewModels"
+			 xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+			  xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaXT.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+	<suki:SukiSideMenu HeaderContentOverlapsToggleButton="True"
+					  ItemsSource="{Binding XTPages}"
+					  SelectedItem="{Binding ActivePage}">
+		<suki:SukiSideMenu.ItemTemplate>
+			<DataTemplate>
+				<suki:SukiSideMenuItem Header="{Binding DisplayName}">
+					<suki:SukiSideMenuItem.Icon>
+						<avalonia:MaterialIcon Foreground="{DynamicResource SukiText}" Kind="{Binding Icon}" />
+					</suki:SukiSideMenuItem.Icon>
+				</suki:SukiSideMenuItem>
+			</DataTemplate>
+		</suki:SukiSideMenu.ItemTemplate>
+		<suki:SukiSideMenu.HeaderContent>
+			<!--<Image Width="80"
+                   Height="80"
+                   Margin="30"
+                   PointerPressed="InputElement_OnPointerPressed"
+                   Source="Assets/OIG.N5o-removebg-preview.png"
+                   ToolTip.Tip="Click To Toggle Top Menu." />-->
+			<avalonia:MaterialIcon Width="30"
+                               Height="30"
+                               VerticalAlignment="Center"
+                               Foreground="{DynamicResource SukiPrimaryColor}"
+                               Kind="Dog" />
+		</suki:SukiSideMenu.HeaderContent>
+		<suki:SukiSideMenu.FooterContent>
+			<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+				<StackPanel.Styles>
+					<Style Selector="Button">
+						<Setter Property="Command" Value="{Binding OpenSettingCommand}" />
+					</Style>
+					<Style Selector="avalonia|MaterialIcon">
+						<Setter Property="Width" Value="25" />
+						<Setter Property="Height" Value="25" />
+					</Style>
+				</StackPanel.Styles>
+				<Button Classes="Basic"
+                       
+                        ToolTip.Tip="Setting URL.">
+					<avalonia:MaterialIcon Kind="Settings" />
+				</Button>
+			
+			</StackPanel>
+		</suki:SukiSideMenu.FooterContent>
+	</suki:SukiSideMenu>
+</UserControl>
+  

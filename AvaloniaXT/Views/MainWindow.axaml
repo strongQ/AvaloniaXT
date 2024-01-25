@@ -1,0 +1,48 @@
+<suki:SukiWindow xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AvaloniaXT.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+		 xmlns:models="clr-namespace:SukiUI.Models;assembly=SukiUI"
+		xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+		xmlns:views="clr-namespace:AvaloniaXT.Views"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaXT.Views.MainWindow"
+		x:DataType="vm:MainViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+		IsMenuVisible="True"
+        Title="AvaloniaXT">
+	<suki:SukiWindow.LogoContent>
+		<avalonia:MaterialIcon Width="20"
+                               Height="20"
+                               VerticalAlignment="Center"
+                               Foreground="{DynamicResource SukiPrimaryColor}"
+                               Kind="Dog" />
+	</suki:SukiWindow.LogoContent>
+	<suki:SukiWindow.MenuItems>
+		<MenuItem Header="Toggles">
+			<MenuItem Command="{Binding ToggleBaseThemeCommand}" Header="{Binding BaseTheme}" />
+			<MenuItem Command="{Binding ToggleAnimationsCommand}" Header="Animations" />
+		</MenuItem>
+		<MenuItem Click="MenuItem_OnClick"
+                  Header="Themes"
+                  ItemsSource="{Binding Themes}">
+			<MenuItem.DataTemplates>
+				<DataTemplate DataType="{x:Type models:SukiColorTheme}">
+					<TextBlock Foreground="{Binding PrimaryBrush}" Text="{Binding DisplayName}" />
+				</DataTemplate>
+			</MenuItem.DataTemplates>
+		</MenuItem>
+		<!--<MenuItem Header="Other">
+			<MenuItem Command="{Binding CreateCustomThemeCommand}" Header="Create Custom Theme" />
+		</MenuItem>-->
+	</suki:SukiWindow.MenuItems>
+
+	
+		<views:MainView />
+	
+        
+	
+	
+</suki:SukiWindow>

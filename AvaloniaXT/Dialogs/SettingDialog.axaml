@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:controls="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			xmlns:vm="clr-namespace:AvaloniaXT.Dialogs"
+			 x:DataType="vm:SettingDialogViewModel"
+             x:Class="AvaloniaXT.Dialogs.SettingDialog">
+	<controls:GroupBox Header="Setting Url">
+		<StackPanel Classes="HeaderContent">
+			<TextBlock>
+				Please Setting Remote Call Api Url
+			</TextBlock>
+
+			<TextBox Text="{Binding Url}" Watermark="Api Url" />
+			
+			
+			<Button HorizontalContentAlignment="Center"
+                    Command="{Binding CloseDialogCommand}"
+                    Content="Close" />
+		</StackPanel>
+	</controls:GroupBox>
+</UserControl>
