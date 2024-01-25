@@ -1,5 +1,8 @@
 # AvaloniaXT
 Avalonia App Page Helper Dll , Contains MainWindow，SukiUI，Support AOT。
+```
+dotnet add package AvaloniaXT --version 1.0.0
+```
 
 # 项目组成
 - AvaloniaXT Nuget通用页面程序集，包含主窗口和一些通用的扩展方法。

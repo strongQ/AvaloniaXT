@@ -18,11 +18,7 @@
 		<sukiUi:SukiTheme ThemeColor="Blue"  />
 
 		<avalonia:MaterialIconStyles />
-
-		
-		
-	
-      
+    
     </Application.Styles>
 	<TrayIcon.Icons>
 		<TrayIcons>

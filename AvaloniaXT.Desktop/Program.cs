@@ -18,7 +18,7 @@ namespace AvaloniaXT.Desktop
         // Avalonia configuration, don't remove; also used by visual designer.
         public static AppBuilder BuildAvaloniaApp()
         {
-            Register.AddIcons();
+          Register.AddIcons();
           return  AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .WithInterFont()

@@ -7,10 +7,18 @@
     <Authors>hihifun</Authors>
     <Description>Avalonia App Page Helper Dll , Contains MainWindow，SukiUI，Support AOT</Description>
     <PackageProjectUrl>https://github.com/strongQ/AvaloniaXT</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
