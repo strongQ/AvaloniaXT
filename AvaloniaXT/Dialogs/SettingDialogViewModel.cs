@@ -35,8 +35,8 @@ namespace AvaloniaXT.Dialogs
         public void CloseDialog()
         {
             _config.RemoteApiUrl = Url;
-            SukiHost.CloseDialog();
-            
+            InteractiveContainer.CloseDialog();
         }
+       
     }
 }

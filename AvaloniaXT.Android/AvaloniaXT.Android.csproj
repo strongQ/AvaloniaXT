@@ -9,7 +9,11 @@
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <AndroidPackageFormat>apk</AndroidPackageFormat>
     <AndroidEnableProfiledAot>False</AndroidEnableProfiledAot>
+	  <UseMauiEssentials>true</UseMauiEssentials>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Resources\xml\network_security_config.xml" />
+  </ItemGroup>
 
   <ItemGroup>
     <AndroidResource Include="Icon.png">
@@ -24,5 +28,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AvaloniaXT\AvaloniaXT.csproj" />
+    <ProjectReference Include="..\XTExternalPage\XTExternalPage.csproj" />
   </ItemGroup>
 </Project>

@@ -2,7 +2,8 @@
 using Android.Content.PM;
 using Avalonia;
 using Avalonia.Android;
-using Avalonia.ReactiveUI;
+using XTExternalPage;
+
 
 namespace AvaloniaXT.Android
 {
@@ -16,9 +17,10 @@ namespace AvaloniaXT.Android
     {
         protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
         {
+            Register.AddIcons();
             return base.CustomizeAppBuilder(builder)
-                .WithInterFont()
-                .UseReactiveUI();
+                .WithInterFont();
+               
         }
     }
 }

@@ -1,7 +1,9 @@
-﻿using System.Windows.Input;
+﻿using System.ComponentModel;
+using System.Windows.Input;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
+using Avalonia.Interactivity;
 using Avalonia.LogicalTree;
 
 namespace SukiUI.Controls;
@@ -18,7 +20,7 @@ public class GlassCard : ContentControl
     }
 
     public new static readonly StyledProperty<Thickness> BorderThicknessProperty =
-        AvaloniaProperty.Register<GlassCard, Thickness>(nameof(BorderThickness), new Thickness(2));
+        AvaloniaProperty.Register<GlassCard, Thickness>(nameof(BorderThickness), new Thickness(1));
 
     public new Thickness BorderThickness
     {
@@ -57,6 +59,18 @@ public class GlassCard : ContentControl
     {
         get => GetValue(CommandParameterProperty);
         set => SetValue(CommandParameterProperty, value);
+    }
+
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        base.OnAttachedToVisualTree(e);
+        if (ContextMenu is null) return;
+        ContextMenu.Opening += ContextMenuOnOpening;
+    }
+
+    private void ContextMenuOnOpening(object sender, CancelEventArgs e)
+    {
+        PseudoClasses.Set(":pointerdown", false);
     }
 
     protected override void OnPointerPressed(PointerPressedEventArgs e)

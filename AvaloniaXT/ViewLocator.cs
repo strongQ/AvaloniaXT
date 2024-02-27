@@ -27,7 +27,13 @@ namespace AvaloniaXT
                 res ??= result.GetView();
                 _controlCache[data!] = res;
             }
-
+            if (result.IsDialog())
+            {
+                var view = result.GetView();
+                view.DataContext = result;
+                return view;
+            }
+           
             res.DataContext = data;
             return res;
         }

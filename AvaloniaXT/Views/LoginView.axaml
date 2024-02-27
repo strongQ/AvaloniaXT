@@ -1,0 +1,52 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			  xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+			 xmlns:vm="clr-namespace:AvaloniaXT.ViewModels"
+			xmlns:i="using:AvaloniaXT.Services"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 x:DataType="vm:LoginViewModel"
+             x:Class="AvaloniaXT.LoginView">
+	
+		<suki:SliverPage  Header="{x:Static i:LangurageService.LogIn}" >
+			
+			
+			<Grid  >
+
+				<TextBlock HorizontalAlignment="Center"
+							Foreground="Red"
+							Classes="DemiBold"
+							FontSize="20"
+							Text="{Binding Error}" />
+				
+				<suki:GlassCard Margin="14,170,14,0" VerticalAlignment="Center">
+
+					<StackPanel Margin="15,15,15,0">
+						
+						
+						<TextBlock
+							Foreground="{DynamicResource SukiText}"
+							Classes="DemiBold"
+							Margin="5,0,0,0"
+							Text="{x:Static i:LangurageService.Username}" />
+						<TextBox Watermark="{x:Static i:LangurageService.Username}" Text="{Binding Username}"/>
+
+						<TextBlock
+							Foreground="{DynamicResource SukiText}"
+							Classes="DemiBold"
+							Margin="5,30,0,0"
+							Text="{x:Static i:LangurageService.Password}" />
+						<TextBox PasswordChar="*" Watermark="*****" Text="{Binding Password}"/>
+						<Border Height="30" />
+						<Button Classes="Rounded Flat" Command="{Binding LoginCommand}"  Margin="0,0,0,0">
+							<TextBlock Foreground="White" Margin="30,0" Text="{x:Static i:LangurageService.LogIn}" />
+						</Button>
+						
+					</StackPanel>
+
+				</suki:GlassCard>
+			</Grid>
+		</suki:SliverPage>
+
+</UserControl>

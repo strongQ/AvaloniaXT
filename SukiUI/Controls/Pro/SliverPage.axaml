@@ -1,0 +1,67 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:suki="clr-namespace:SukiUI.Controls"
+			 xmlns:icons="clr-namespace:SukiUI.Content"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SukiUI.Controls.SliverPage">
+	<UserControl.Styles>
+		<Style Selector="suki|SliverPage">
+			<Setter Property="Template">
+				<ControlTemplate>
+
+					<Grid>
+						<Grid.Resources>
+							<suki:OffsetToHeightConverter x:Key="HeightConverter" />
+							<suki:OffsetToFontSizeConverter x:Key="FontSizeConverter" />
+							<suki:OffsetToMarginConverter x:Key="MarginConverter" />
+							<suki:OffsetToMarginScrollConverter x:Key="MarginScrollConverter" />
+						</Grid.Resources>
+						<Border
+                            
+                            BorderThickness="0,0,0,0"
+                            Height="{Binding #scrollView.Offset, Converter={StaticResource HeightConverter}}"
+                            VerticalAlignment="Top">
+
+							<Grid Margin="{Binding #scrollView.Offset, Converter={StaticResource MarginConverter}}">
+								<TextBlock
+                                    FontSize="{Binding #scrollView.Offset, Converter={StaticResource FontSizeConverter}}"
+                                    HorizontalAlignment="Left"
+									Foreground="{DynamicResource SukiText}"
+                                    Margin="0,0,0,0"
+                                    Text="{TemplateBinding Header}"
+                                    VerticalAlignment="Center" />
+							</Grid>
+						</Border>
+						<ScrollViewer
+                            IsScrollInertiaEnabled="True"
+                            Margin="0,100,0,0"
+                            Name="scrollView"
+                            VerticalScrollBarVisibility="Hidden">
+							<StackPanel>
+								<Grid Height="70" />
+								<ContentControl Content="{TemplateBinding Content}" Margin="13,0" />
+							</StackPanel>
+						</ScrollViewer>
+						<Button
+							IsVisible="{TemplateBinding ShowBack}"
+                            Classes="Basic"
+                            Click="GoBack"
+                            HorizontalAlignment="Left"
+                            Padding="23,40"
+                            VerticalAlignment="Top">
+							<PathIcon                              
+								Data="{x:Static icons:Icons.ArrowLeft}"                               
+                                Height="20"
+                                Width="20" />
+						</Button>
+
+
+					</Grid>
+
+				</ControlTemplate>
+			</Setter>
+		</Style>
+	</UserControl.Styles>
+</UserControl>

@@ -1,0 +1,125 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:icons="clr-namespace:SukiUI.Content"
+			 xmlns:suki="clr-namespace:SukiUI.Controls"
+            >
+	<Design.PreviewWith>
+		<StackPanel Margin="20">
+			<suki:PaginationButton Page="3" />
+		</StackPanel>
+	</Design.PreviewWith>
+	<!--  Add Resources Here  -->
+	<ControlTheme x:Key="{x:Type suki:Pagination}" TargetType="suki:Pagination">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="suki:Pagination">
+				<StackPanel Orientation="Horizontal">
+					<suki:PaginationButton Name="{x:Static suki:Pagination.PART_PreviousButton}">
+						<PathIcon
+                            Width="12"
+                            Height="12"
+                            Data="{x:Static icons:Icons.PaginationBackward}"
+                            Foreground="{DynamicResource SukiText}" />
+					</suki:PaginationButton>
+					<StackPanel Name="{x:Static suki:Pagination.PART_ButtonPanel}" Orientation="Horizontal" />
+					<suki:PaginationButton Name="{x:Static suki:Pagination.PART_NextButton}">
+						<PathIcon
+                            Width="12"
+                            Height="12"
+                            Data="{x:Static icons:Icons.PaginationForward}"
+                            Foreground="{DynamicResource SukiText}" />
+					</suki:PaginationButton>
+					<ComboBox
+                        Name="{x:Static suki:Pagination.PART_SizeChangerComboBox}"
+                        IsVisible="{TemplateBinding ShowPageSizeSelector}"
+                        ItemsSource="{TemplateBinding PageSizeOptions}"
+                        SelectedItem="{TemplateBinding PageSize,
+                                                       Mode=TwoWay}" />
+				</StackPanel>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type suki:PaginationButton}" TargetType="suki:PaginationButton">
+		<Setter Property="Content" Value="{Binding $self.Page}" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="MinWidth" Value="32" />
+		<Setter Property="MinHeight" Value="32" />
+		
+		<Setter Property="Foreground" Value="{DynamicResource SukiText}" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="suki:PaginationButton">
+				<Border
+                    Padding="4"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="3">
+					<ContentPresenter
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Content="{TemplateBinding Content}"
+                        FontWeight="{TemplateBinding FontWeight}"
+                        Foreground="{TemplateBinding Foreground}" />
+				</Border>
+			</ControlTemplate>
+		</Setter>
+		<!--<Style Selector="^:pointerover">
+			<Setter Property="u:PaginationButton.Background" Value="{DynamicResource PaginationButtonPointeroverBackground}" />
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="u:PaginationButton.Background" Value="{DynamicResource PaginationButtonPressedBackground}" />
+		</Style>-->
+		<Style Selector="^:left">
+			<Setter Property="suki:PaginationButton.Content">
+				<Template>
+					<PathIcon
+                        Width="12"
+                        Height="12"
+                        Data="{x:Static icons:Icons.PaginationMore}"
+                        Foreground="{DynamicResource SukiText}" />
+				</Template>
+			</Setter>
+			<Style Selector="^:pointerover">
+				<Setter Property="suki:PaginationButton.Content">
+					<Template>
+						<PathIcon
+                            Width="12"
+                            Height="12"
+                            Data="{x:Static icons:Icons.PaginationFastBackward}"
+                            Foreground="{DynamicResource SukiText}" />
+					</Template>
+				</Setter>
+			</Style>
+		</Style>
+		<Style Selector="^:right">
+			<Setter Property="suki:PaginationButton.Content">
+				<Template>
+					<PathIcon
+                        Width="12"
+                        Height="12"
+                        Data="{x:Static icons:Icons.PaginationMore}"
+                        Foreground="{DynamicResource SukiText}" />
+				</Template>
+			</Setter>
+			<Style Selector="^:pointerover">
+				<Setter Property="suki:PaginationButton.Content">
+					<Template>
+						<PathIcon
+                            Width="12"
+                            Height="12"
+                            Data="{x:Static icons:Icons.PaginationFastForward}"
+                            Foreground="{DynamicResource SukiText}" />
+					</Template>
+				</Setter>
+			</Style>
+		</Style>
+		<Style Selector="^:selected">
+			<Setter Property="suki:PaginationButton.Background" Value="{DynamicResource PaginationButtonSelectedBackground}" />
+			
+			<Setter Property="suki:PaginationButton.FontWeight" Value="600" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

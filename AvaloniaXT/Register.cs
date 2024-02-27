@@ -14,6 +14,7 @@ using XT.Common;
 using XT.Common.Interfaces;
 using XT.Common.Services;
 using Projektanker.Icons.Avalonia.FontAwesome;
+using XT.Common.Extensions;
 
 namespace AvaloniaXT
 {
@@ -37,10 +38,24 @@ namespace AvaloniaXT
 
             services.AddSingleton<XTPageBase, AboutViewModel>();
 
+           
+
             services.AddSingleton<IApiConfig, ApiConfigService>();
+
+            services.AddSingleton<AudioPlayService>();
 
             services.AddOriginHttpClient();
             return services;
+        }
+
+        /// <summary>
+        /// 设置语言
+        /// </summary>
+        /// <param name="cultrue"></param>
+        public static void InitialCulture(string cultrue)
+        {
+            if(cultrue.IsNotNullOrEmpty())
+            Lang.Resources.Culture = new System.Globalization.CultureInfo(cultrue);
         }
 
         public static void AddIcons()
@@ -64,10 +79,9 @@ namespace AvaloniaXT
             }
             else if (lifetime is ISingleViewApplicationLifetime singleViewPlatform)
             {
-                singleViewPlatform.MainView = new MainView
-                {
-                    DataContext = mainVm
-                };
+                singleViewPlatform.MainView = new PhoneMainView();
+                
+                
             }
         }
 

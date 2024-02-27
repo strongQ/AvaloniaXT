@@ -5,6 +5,7 @@ using Avalonia.Controls.Templates;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using AvaloniaXT;
+using AvaloniaXT.Interfaces;
 using AvaloniaXT.Services;
 using AvaloniaXT.ViewModels;
 using AvaloniaXT.Views;
@@ -13,11 +14,13 @@ using Microsoft.Extensions.Options;
 using SukiUI.Controls;
 using SukiUI.Models;
 using System;
+using System.Globalization;
 using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using XT.Common.Services;
 using XTExternalPage.Apis;
+using XTExternalPage.Dialogs;
 using XTExternalPage.Services;
 using XTExternalPage.ViewModels;
 
@@ -41,8 +44,14 @@ namespace XTExternalPage
 
             services.AddSingleton<XTPageBase, ThreeFloorViewModel>();
 
+            services.AddSingleton<XTPageBase, PhoneTestViewModel>();
+
+            services.AddKeyedSingleton<XTPageBase, SearchDialogViewModel>("Search");
             services.AddSingleton<EcsTagApi>();
-           // services.AddSingleton<DbService>();
+
+            services.AddSingleton<IMenuToolService, MenuToolService>();
+
+            // services.AddSingleton<DbService>();
 
             _provider = services.BuildServiceProvider();
 
@@ -51,6 +60,10 @@ namespace XTExternalPage
 
         public override void OnFrameworkInitializationCompleted()
         {
+           // Lang.Resources.Culture = new CultureInfo("en-US");
+
+           // Register.InitialCulture("en-US");
+
             ApplicationLifetime?.InitialCompleted(_provider);
 
             base.OnFrameworkInitializationCompleted();

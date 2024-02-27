@@ -4,10 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:vm="clr-namespace:AvaloniaXT.ViewModels"
+			 xmlns:i="using:AvaloniaXT.Services"
+			 x:DataType="vm:AboutViewModel"
              x:Class="AvaloniaXT.About">
-	<suki:GlassCard>
-		<suki:GroupBox Header="About" HorizontalAlignment="Center" VerticalAlignment="Center">
-			
+	
+		<suki:GroupBox Header="{x:Static i:LangurageService.About}" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+			<StackPanel>
 				<StackPanel Orientation="Vertical">
 					<RadioButton Classes="GigaChips"
 								 GroupName="R3"
@@ -15,6 +19,7 @@
 						<StackPanel>
 							<TextBlock FontSize="18"
 									   FontWeight="DemiBold"
+									    Foreground="{DynamicResource SukiText}"
 									   Text="Avalonia App" />
 							<TextBlock Margin="0,8,0,0"
 									   Foreground="{DynamicResource SukiLowText}"
@@ -25,6 +30,7 @@
 						<StackPanel>
 							<TextBlock FontSize="18"
 									   FontWeight="DemiBold"
+									   Foreground="{DynamicResource SukiText}"
 									   Text="Cross Platform" />
 							<TextBlock Margin="0,8,0,0"
 									   Foreground="{DynamicResource SukiLowText}"
@@ -35,6 +41,7 @@
 						<StackPanel>
 							<TextBlock FontSize="18"
 									   FontWeight="DemiBold"
+									   Foreground="{DynamicResource SukiText}"
 									   Text="Use Action" />
 							<TextBlock Margin="0,8,0,0"
 									   Foreground="{DynamicResource SukiLowText}"
@@ -42,7 +49,10 @@
 						</StackPanel>
 					</RadioButton>
 				</StackPanel>
+
+				<suki:FormFieldSwitch Title="{x:Static i:LangurageService.Theme}"  IsChecked="{Binding IsChecked}"/>
+			</StackPanel>
 			
 		</suki:GroupBox>
-	</suki:GlassCard>
+	
 </UserControl>

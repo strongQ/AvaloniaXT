@@ -37,6 +37,14 @@ namespace SukiUI.Controls
             set => SetValue(SecondBufferProperty, value);
         }
 
+        public static readonly StyledProperty<object?> ContentProperty = AvaloniaProperty.Register<SukiTransitioningContentControl, object?>(nameof(Content));
+
+        public object? Content
+        {
+            get => GetValue(ContentProperty);
+            set => SetValue(ContentProperty, value);
+        }
+
         private bool _isFirstBufferActive;
 
         private ContentPresenter _firstBuffer = null!;
@@ -121,6 +129,16 @@ namespace SukiUI.Controls
 
         private CancellationTokenSource _animCancellationToken = new();
 
+        private IDisposable? _contentDisposable;
+
+        protected override void OnLoaded(RoutedEventArgs e)
+        {
+            base.OnLoaded(e);
+            _contentDisposable = this.GetObservable(ContentProperty)
+                .ObserveOn(new AvaloniaSynchronizationContext())
+                .Subscribe(PushContent);
+        }
+
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
@@ -134,11 +152,16 @@ namespace SukiUI.Controls
         {
             if (content is null) return;
             
-            _animCancellationToken.Cancel();
-            _animCancellationToken.Dispose();
-            _animCancellationToken = new CancellationTokenSource();
             
-            if (_isFirstBufferActive) SecondBuffer = content;
+           
+           
+            _animCancellationToken = new CancellationTokenSource();
+
+            if (_isFirstBufferActive)
+            {
+                if (FirstBuffer == content) return;
+                SecondBuffer = content;
+            }
             else FirstBuffer = content;
             try
             {
@@ -159,6 +182,7 @@ namespace SukiUI.Controls
         {
             base.OnUnloaded(e);
             _disposable?.Dispose();
+            _contentDisposable?.Dispose();
             _animCancellationToken.Dispose();
         }
     }

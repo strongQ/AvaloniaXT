@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:suki="clr-namespace:SukiUI.Controls"
+             x:Class="SukiUI.Controls.MobilePickerPopUp">
+	<UserControl.DataContext>
+		<suki:MobilePickerPopUpVM />
+	</UserControl.DataContext>
+	<Border
+        HorizontalAlignment="Center"
+        Name="rootBorder"
+        VerticalAlignment="Center"
+        Width="300">
+		<StackPanel>
+			<TextBlock
+                FontWeight="Bold"
+                Margin="8,5"
+                Text="{Binding Title}" />
+
+			<TextBlock
+               
+                FontSize="13"
+                Margin="9,2"
+                Text="{Binding SubTitle}"
+                TextWrapping="Wrap" />
+
+
+			<Grid Margin="10,20,10,18" VerticalAlignment="Center">
+				<ListBox Foreground="{DynamicResource SukiText}"
+                    ItemsSource="{Binding Items}"
+                    MaxHeight="170"
+                    MinHeight="120"
+                    SelectedItem="{Binding SelectedItem}"
+                    VerticalAlignment="Center" />
+			</Grid>
+
+			<Button Classes="Rounded Flat" Click="DoneClick">
+				<TextBlock Text="Done" />
+			</Button>
+
+		</StackPanel>
+	</Border>
+</UserControl>

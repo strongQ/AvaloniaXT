@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:suki="clr-namespace:SukiUI.Controls"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SukiUI.Controls.FormFieldPicker">
+	<UserControl.Styles>
+		<Style Selector="suki|FormFieldPicker">
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Grid Height="47">
+						<TextBlock
+                            FontWeight="DemiBold"
+							Foreground="{DynamicResource SukiText}"
+                            HorizontalAlignment="Left"
+                            Text="{TemplateBinding Title}"
+                            VerticalAlignment="Center" />
+						<suki:MobilePicker
+                            HorizontalAlignment="Right"
+                            Items="{TemplateBinding Items}"
+                          
+                            SelectedItem="{TemplateBinding SelectedItem,
+                                                           Mode=TwoWay}"
+                            SubTitle="{TemplateBinding DialogSubTitle}"
+                            Title="{TemplateBinding DialogTitle}"
+                            VerticalAlignment="Center" />
+					</Grid>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+	</UserControl.Styles>
+</UserControl>

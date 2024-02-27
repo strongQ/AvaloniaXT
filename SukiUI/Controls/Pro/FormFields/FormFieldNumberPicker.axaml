@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:suki="clr-namespace:SukiUI.Controls"
+             x:Class="SukiUI.Controls.FormFieldNumberPicker">
+	<UserControl.Styles>
+		<Style Selector="suki|FormFieldNumberPicker">
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Grid Height="47">
+						<TextBlock
+                            FontWeight="DemiBold"
+                            HorizontalAlignment="Left"
+							Foreground="{DynamicResource SukiText}"
+                            Text="{TemplateBinding Title}"
+                            VerticalAlignment="Center" />
+						<suki:MobileNumberPicker
+                            HorizontalAlignment="Right"
+                            
+                            Maximum="{TemplateBinding Maximum}"
+                            Minimum="{TemplateBinding Minimum}"
+                            Value="{TemplateBinding Value,
+                                                    Mode=TwoWay}"
+                            VerticalAlignment="Center" />
+					</Grid>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+	</UserControl.Styles>
+
+</UserControl>

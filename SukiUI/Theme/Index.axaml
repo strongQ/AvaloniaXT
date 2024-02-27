@@ -1,6 +1,7 @@
 <Styles x:Class="SukiUI.SukiTheme"
         xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:system="clr-namespace:System;assembly=netstandard">
 
     <SimpleTheme />
 
@@ -10,30 +11,26 @@
     <StyleInclude Source="avares://SukiUI/Theme/TextBoxStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/RichTextBoxStyles.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/BorderStyles.xaml" />
-    <StyleInclude Source="avares://SukiUI/Theme/TabControlStyles.xaml" />
 
     <StyleInclude Source="avares://SukiUI/Theme/ProgressBarStyles.xaml" />
-    <StyleInclude Source="avares://SukiUI/Theme/ListBoxStyles.xaml" />
+	
+    <!--<StyleInclude Source="avares://SukiUI/Theme/ListBoxStyles.xaml" />
+	<StyleInclude Source="avares://SukiUI/Theme/ListBoxItemStyle.axaml" />-->
+	
     <StyleInclude Source="avares://SukiUI/Theme/TreeViewStyles.xaml" />
 
-    <StyleInclude Source="avares://SukiUI/Theme/MenuStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ToggleSwitchStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/RadioButtonStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ToggleButtonStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/SliderStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/NumericUpDownStyles.xaml" />
     <StyleInclude Source="avares://SukiUI/Theme/DataGridStyle.axaml" />
-    <StyleInclude Source="avares://SukiUI/Theme/ListBoxItemStyle.axaml" />
+    
     <StyleInclude Source="avares://SukiUI/Theme/ComboBoxItemStyle.axaml" />
-    <StyleInclude Source="avares://SukiUI/Theme/MenuItemStyle.axaml" />
-    <StyleInclude Source="avares://SukiUI/Theme/TabItemStyle.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/NotificationStyle.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/NotificationCardStyle.axaml" />
-    <StyleInclude Source="avares://SukiUI/Theme/ContextMenuStyle.axaml" />
-    <StyleInclude Source="avares://SukiUI/Theme/WindowStyles.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/CheckBoxStyles.axaml" />
     <StyleInclude Source="avares://SukiUI/Theme/ScrollBarStyle.axaml" />
-    <!-- <StyleInclude Source="avares://SukiUI/Theme/ExpanderStyles.xaml" /> -->
 
     <Styles.Resources>
         <ResourceDictionary>
@@ -45,20 +42,39 @@
 
             <CornerRadius x:Key="SmallCornerRadius">7</CornerRadius>
             <CornerRadius x:Key="MediumCornerRadius">15</CornerRadius>
+
+            <system:TimeSpan x:Key="LongAnimationDuration">0.5</system:TimeSpan>
+            <system:TimeSpan x:Key="MediumAnimationDuration">0.35</system:TimeSpan>
+            <system:TimeSpan x:Key="ShortAnimationDuration">0.2</system:TimeSpan>
+
             <FontFamily x:Key="QuicksandFont">avares://SukiUI/CustomFont#Quicksand</FontFamily>
 
             <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="avares://sukiUI/Theme/TextBlockStyles.xaml" />
+                <ResourceInclude Source="avares://sukiUI/Theme/TextBlock.xaml" />
                 <ResourceInclude Source="avares://SukiUI/Theme/SplitView.axaml" />
                 <ResourceInclude Source="avares://SukiUI/Theme/DatePicker.axaml" />
                 <ResourceInclude Source="avares://sukiUI/Theme/ToolTipStyle.axaml" />
-                <ResourceInclude Source="avares://sukiUI/Theme/ButtonStyles.axaml" />
-                <ResourceInclude Source="avares://sukiUI/Theme/PathIconStyles.axaml" />
-
-                <ResourceInclude Source="avares://sukiUI/Controls/ContentExpandControl.axaml" />
+                <ResourceInclude Source="avares://sukiUI/Theme/Button.axaml" />
+                <ResourceInclude Source="avares://sukiUI/Theme/PathIcon.axaml" />
                 <ResourceInclude Source="avares://sukiUI/Theme/Expander.axaml" />
+                <ResourceInclude Source="avares://sukiUI/Theme/TabControl.axaml" />
+                <ResourceInclude Source="avares://sukiUI/Theme/TabItem.axaml" />
+                <ResourceInclude Source="avares://sukiUI/Theme/DropDownButton.axaml" />
+                <ResourceInclude Source="avares://sukiUI/Theme/Menu.axaml" />
+                <ResourceInclude Source="avares://sukiUI/Theme/ContextMenu.axaml" />
+                <ResourceInclude Source="avares://sukiUI/Theme/MenuItem.axaml" />
+                <ResourceInclude Source="avares://sukiUI/Theme/FlyoutPresenter.axaml" />
 
+				<ResourceInclude Source="avares://sukiUI/Theme/GridSplitter.axaml" />
+				<ResourceInclude Source="avares://sukiUI/Theme/Carousel.axaml" />
+
+				<ResourceInclude Source="avares://sukiUI/Controls/Pro/Ursa/ImageViewer.axaml" />
+				<ResourceInclude Source="avares://sukiUI/Controls/Pro/Timeline/Timeline.axaml" />
+				<ResourceInclude Source="avares://sukiUI/Controls/Pro/Pagination/Pagination.axaml" />
+				<ResourceInclude Source="avares://sukiUI/Controls/Pro/ListBox/ListBox.axaml" />
+				
                 <ResourceInclude Source="avares://sukiUI/Controls/SukiWindow.axaml" />
+				<ResourceInclude Source="avares://sukiUI/Controls/SuWindow.axaml" />
                 <ResourceInclude Source="avares://sukiUI/Controls/SukiHost.axaml" />
                 <ResourceInclude Source="avares://sukiUI/Controls/SukiToast.axaml" />
                 <ResourceInclude Source="avares://sukiUI/Controls/SukiSideMenu.axaml" />
@@ -67,7 +83,7 @@
                 <ResourceInclude Source="avares://sukiUI/Controls/SukiTransitioningContentControl.axaml" />
                 <ResourceInclude Source="avares://sukiUI/Controls/Stepper.axaml" />
                 <ResourceInclude Source="avares://sukiUI/Controls/GlassMorphism/GlassCard.axaml" />
-                <ResourceInclude Source="../ColorTheme/Light.axaml" />
+                <ResourceInclude Source="avares://sukiUI/Controls/ContentExpandControl.axaml" />
             </ResourceDictionary.MergedDictionaries>
 
         </ResourceDictionary>

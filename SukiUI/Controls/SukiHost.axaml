@@ -1,58 +1,57 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:icons="clr-namespace:SukiUI.Content"
                     xmlns:suki="clr-namespace:SukiUI.Controls">
-    <ControlTheme
-        TargetType="suki:SukiHost"
-        x:Key="SukiHostTheme">
+    <ControlTheme x:Key="SukiHostTheme" TargetType="suki:SukiHost">
         <Setter Property="Template">
             <ControlTemplate>
                 <Grid>
                     <Grid Name="PART_ContentContainer">
-                        <ContentControl Content="{TemplateBinding Content}" />
+                        <ContentPresenter Content="{TemplateBinding Content}" />
                     </Grid>
-                    
+
                     <ItemsControl Name="PART_ToastPresenter"
+                                  Margin="5,5"
+                                  HorizontalAlignment="Stretch"
                                   VerticalAlignment="Bottom"
-                                  HorizontalAlignment="Stretch" 
-                                  Margin="5,5" 
                                   ItemsSource="{TemplateBinding ToastsCollection}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <DockPanel LastChildFill="True"   VerticalAlignment="Bottom" />
+                                <DockPanel VerticalAlignment="Bottom" LastChildFill="True" />
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
-                    
-                    <Border
-                        Name="PART_DialogBackground"
-                        IsHitTestVisible="False" Opacity="0"
-                        HorizontalAlignment="Stretch"
-                        VerticalAlignment="Stretch"
-                        Background="{DynamicResource SukiDialogBackground}" >
+
+                    <Border Name="PART_DialogBackground"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Background="{DynamicResource SukiDialogBackground}"
+                            IsHitTestVisible="False"
+                            Opacity="0">
                         <Border.Transitions>
                             <Transitions>
-                                <DoubleTransition Property="Opacity" Duration="0:0:0.4"></DoubleTransition>
+                                <DoubleTransition Property="Opacity" Duration="0:0:0.4" />
                             </Transitions>
                         </Border.Transitions>
                     </Border>
 
-                    <Border Background="{DynamicResource SukiBackground}"
+                    <Border Name="borderDialog"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="{DynamicResource SukiBackground}"
                             Classes.opened="False"
                             CornerRadius="15"
-                            HorizontalAlignment="Center"
                             IsHitTestVisible="False"
-                            Name="borderDialog"
-                            Opacity="0"
-                            VerticalAlignment="Center">
+                            Opacity="0">
                         <Border.Transitions>
                             <Transitions>
-                                <ThicknessTransition Duration="0:0:0.25" Property="Margin">
+                                <ThicknessTransition Property="Margin" Duration="0:0:0.25">
                                     <ThicknessTransition.Easing>
                                         <CircularEaseOut />
                                     </ThicknessTransition.Easing>
                                 </ThicknessTransition>
-                                <DoubleTransition Duration="0:0:0.15" Property="Opacity" />
-                                <TransformOperationsTransition Duration="0:0:0.25" Property="RenderTransform">
+                                <DoubleTransition Property="Opacity" Duration="0:0:0.15" />
+                                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.25">
                                     <TransformOperationsTransition.Easing>
                                         <CircularEaseOut />
                                     </TransformOperationsTransition.Easing>
@@ -60,24 +59,43 @@
                             </Transitions>
                         </Border.Transitions>
 
-                        <Grid>
-                            <Border Name="BorderDialog1" Classes="Card"
+						<Grid>
+							<Border Name="BorderDialog1" Classes="Card"
                                     Background="{DynamicResource SukiCardBackground}" />
-                            <ContentControl Content="{TemplateBinding DialogContent}" Margin="20" />
-                        </Grid>
+
+							<Grid RowDefinitions="Auto,*">
+
+								<StackPanel Orientation="Horizontal"  HorizontalAlignment="Right" VerticalAlignment="Top">
+									<Button   Name="PART_MaximizeButton"
+																  Classes="Basic Rounded WindowControlsButton"
+																  >
+										<PathIcon Width="10" Height="10" x:Name="MaximizeIcon"
+												  Classes="WindowControlsIcon"
+												  Data="{x:Static icons:Icons.WindowMaximize}" />
+									</Button>
+
+									<Button  Name="PART_CloseButton" Classes="Basic Rounded WindowControlsButton Close">
+										<PathIcon Width="10" Height="10" Data="{x:Static icons:Icons.WindowClose}" />
+									</Button>
+								</StackPanel>
+								
+								<ContentControl Grid.Row="1" Content="{TemplateBinding DialogContent}" Margin="20" />
+							</Grid>
+
+						</Grid>
                     </Border>
 
                     <Grid.Styles>
                         <Style Selector="suki|SukiHost[IsDialogOpen=True]">
 
                             <Style Selector="^ Border#PART_DialogBackground">
-                                <Setter Property="Opacity" Value="0.4"></Setter>
+                                <Setter Property="Opacity" Value="0.4" />
                                 <Setter Property="IsHitTestVisible" Value="True" />
                             </Style>
 
                             <Style Selector="^ Grid#PART_ContentContainer">
                                 <Setter Property="IsHitTestVisible" Value="False" />
-                                <!-- Please do not remove this empty blur -->
+                                <!--  Please do not remove this empty blur  -->
                                 <Style.Animations>
                                     <Animation FillMode="Forward" Duration="0:0:0.5">
                                         <KeyFrame Cue="0%">
@@ -88,7 +106,7 @@
                                         </KeyFrame>
                                     </Animation>
                                 </Style.Animations>
-                             
+
                             </Style>
 
                             <Style Selector="^ Border#borderDialog">
@@ -103,13 +121,13 @@
                         <Style Selector="suki|SukiHost[IsDialogOpen=False]">
 
                             <Style Selector="^ Border#PART_DialogBackground">
-                                <Setter Property="Opacity" Value="0"></Setter>
+                                <Setter Property="Opacity" Value="0" />
                                 <Setter Property="IsHitTestVisible" Value="False" />
                             </Style>
 
                             <Style Selector="^ Grid#PART_ContentContainer">
                                 <Setter Property="IsHitTestVisible" Value="True" />
-                                <!-- Please do not remove this empty blur -->
+                                <!--  Please do not remove this empty blur  -->
                                 <Style.Animations>
                                     <Animation FillMode="Forward" Duration="0:0:0.5">
                                         <KeyFrame Cue="0%">
@@ -130,13 +148,12 @@
                             </Style>
                         </Style>
                     </Grid.Styles>
-                    
+
                 </Grid>
             </ControlTemplate>
         </Setter>
     </ControlTheme>
-    <ControlTheme
-        TargetType="suki:SukiHost"
-        x:Key="{x:Type suki:SukiHost}"
-        BasedOn="{StaticResource SukiHostTheme}" />
+    <ControlTheme x:Key="{x:Type suki:SukiHost}"
+                  BasedOn="{StaticResource SukiHostTheme}"
+                  TargetType="suki:SukiHost" />
 </ResourceDictionary>

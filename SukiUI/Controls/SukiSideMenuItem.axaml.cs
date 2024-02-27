@@ -57,10 +57,10 @@ public class SukiSideMenuItem : ListBoxItem
         {
             var p = e.GetCurrentPoint(this);
 
-            if (p.Properties.PointerUpdateKind is PointerUpdateKind.LeftButtonPressed or
-                PointerUpdateKind.RightButtonPressed)
+            //if (p.Properties.PointerUpdateKind is PointerUpdateKind.LeftButtonPressed or
+            //    PointerUpdateKind.RightButtonPressed)
             {
-                if (p.Pointer.Type == PointerType.Mouse)
+                //if (p.Pointer.Type == PointerType.)
                 {
                     // If the pressed point comes from a mouse, perform the selection immediately.
                     e.Handled = owner.UpdateSelectionFromPointerEvent(this);

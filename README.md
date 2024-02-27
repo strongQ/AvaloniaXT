@@ -7,12 +7,23 @@ dotnet add package AvaloniaXT --version 1.0.0
 # 项目组成
 - AvaloniaXT Nuget通用页面程序集，包含主窗口和一些通用的扩展方法。
 - XTExternalPage 扩展界面程序集，包含定制化的业务界面。
-- AvaloniaXT.Desktop 桌面程序启动入口，android和ios没有测试过。
-- SukiUI [引用的SukiUI项目](https://github.com/kikipoulet/SukiUI) 修改了ProgressBar的MiniHeight。
+- AvaloniaXT.Desktop 桌面程序启动入口。
+- AvaloniaXT.Android 可以运行， Microsoft.Maui.Essentials 可以使用Essentials全部功能。
+- SukiUI [引用的SukiUI项目](https://github.com/kikipoulet/SukiUI) 修改了ProgressBar的MiniHeight、添加一些控件。
 
 # 系统界面
 ![systemimage](Images/AvaloniaXT.png)
 
+# 国际化支持
+```
+  public override void OnFrameworkInitializationCompleted()
+  {
+     // Lang.Resources.Culture = new CultureInfo("en-US");
+     // Register.InitialCulture("en-US");    
+  }
+
+  直接编辑 Resources.resx 添加语言
+```
 
 # AOT支持
 ## 要点
@@ -148,8 +159,17 @@ var result = JsonSerializer.Deserialize<AdminCodeResult<EcsMainView>>(data, opti
  // 注入 AvaloniaXT中的服务
  services.InitialXTServices();
 
-// 注入业务界面服务
-// services.AddSingleton<DbService>();
+ // 注入业务界面服务
+ // services.AddSingleton<DbService>();
+
+ // 注入界面，界面ViewModel需要
+ services.AddSingleton<XTPageBase, PhoneTestViewModel>();
+
+ // 注入Dialog界面，需要定义Key
+ services.AddKeyedSingleton<XTPageBase, SearchDialogViewModel>("Search");
+
+ // 界面配置
+ services.AddSingleton<IMenuToolService, MenuToolService>();
 
  _provider = services.BuildServiceProvider();
 
@@ -178,8 +198,7 @@ var result = JsonSerializer.Deserialize<AdminCodeResult<EcsMainView>>(data, opti
  }
 
 <ItemsControl.DataTemplates>
-	<selector:EcsTagSelector>
-		
+	<selector:EcsTagSelector>		
 		<DataTemplate x:Key="Other">
 			<cp:UnitOther></cp:UnitOther>
 		</DataTemplate>
@@ -190,3 +209,13 @@ var result = JsonSerializer.Deserialize<AdminCodeResult<EcsMainView>>(data, opti
 </ItemsControl.DataTemplates>
 
 ```
+
+## Dialog弹窗
+```
+// windows窗体
+await SukiHost.ShowToast();
+// 支持所有平台
+InteractiveContainer.ShowToast()
+```
+
+

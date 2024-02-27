@@ -1,0 +1,267 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:suki="clr-namespace:SukiUI.Controls;assembly=SukiUI"
+			  xmlns:icons="clr-namespace:SukiUI.Content;assembly=SukiUI"
+			  xmlns:vm="using:XTExternalPage.ViewModels"
+			 x:DataType="vm:PhoneTestViewModel"
+			  xmlns:objectModel="clr-namespace:System.Collections.ObjectModel;assembly=System.ObjectModel"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="XTExternalPage.PhoneTest">
+	<suki:SliverPageLong   Header="Settings" >
+
+		<StackPanel>
+		<suki:MobileGroupBox Header="DeviceInfo" Margin="-5,50,0,20">
+			<StackPanel>
+
+				
+				<TextBlock Text="{Binding DeviceInfoString}" />
+
+			</StackPanel>
+		</suki:MobileGroupBox>
+		
+		<suki:MobileGroupBox Header="Brightness" Margin="-5,0,0,20">
+			<StackPanel>
+				<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+					<PathIcon
+						Data="{x:Static icons:Icons.Sunny}"
+						
+						Grid.Column="0"
+						Margin="5" />
+					<PathIcon
+						Data="{x:Static icons:Icons.Sunny}"
+						
+						Grid.Column="2"
+						Height="28"
+						Margin="5"
+						Width="28" />
+					<Slider
+						Grid.Column="1"
+						Margin="5"
+						Maximum="100"
+						Minimum="0"
+						Value="50" />
+				</Grid>
+
+				<suki:FormFieldSwitch Title="Automatic" />
+
+			</StackPanel>
+		</suki:MobileGroupBox>
+
+
+		<suki:MobileGroupBox Header="View mode">
+				<StackPanel>
+					<suki:FormFieldSwitch Title="Dark Mode"  />
+
+					<suki:HorizontalSeparator />
+
+					<suki:FormFieldAction Command="{Binding LaunchToast}" Title="Eye Comfort" />
+					<suki:HorizontalSeparator />
+
+					<suki:FormFieldNumberPicker Title="Count"
+                        Maximum="20"
+                        Minimum="0"
+                        Value="10" />
+
+					<suki:HorizontalSeparator />
+
+					<suki:FormFieldPicker
+                        DialogSubTitle="Text style of your system apps."
+                        DialogTitle="Text Style"
+                        SelectedItem="Default"
+                        Title="Text Style">
+						<suki:FormFieldPicker.Items>
+							<objectModel:ObservableCollection x:TypeArguments="system:String">
+								<system:String>Default</system:String>
+								<system:String>Italic</system:String>
+								<system:String>Bold</system:String>
+							</objectModel:ObservableCollection>
+						</suki:FormFieldPicker.Items>
+					</suki:FormFieldPicker>
+
+
+					<suki:HorizontalSeparator />
+
+
+					<Grid Height="47" HorizontalAlignment="Stretch">
+						<DatePicker
+                            HorizontalAlignment="Right"
+                           
+                            VerticalAlignment="Center" />
+						<TextBlock
+							
+                            FontSize="16"
+                            FontWeight="DemiBold"
+                           
+                            HorizontalAlignment="Left"
+                            Text="Date"
+                            VerticalAlignment="Center" />
+
+
+
+					</Grid>
+
+					<suki:HorizontalSeparator />
+
+					
+				</StackPanel>
+			</suki:MobileGroupBox>
+
+			<suki:MobileGroupBox Header="Image">
+				<StackPanel>
+					<suki:ImageViewer
+            Name="viewer"
+            Width="600"
+            Height="300"
+            Source="/Assets/WORLD.png">
+						</suki:ImageViewer>
+				</StackPanel>
+			</suki:MobileGroupBox>
+
+			<suki:MobileGroupBox Header="Timeline">
+				<WrapPanel>
+					<suki:Timeline
+		  Mode="Alternate"
+		  HorizontalAlignment="Left"
+		  ContentMemberBinding="{ReflectionBinding Description}"
+		  HeaderMemberBinding="{ReflectionBinding Header}"
+		  IconMemberBinding="{ReflectionBinding ItemType}"
+		  ItemsSource="{Binding Items}"
+		  TimeMemberBinding="{ReflectionBinding Time}" >
+					</suki:Timeline>
+					<suki:Timeline HorizontalAlignment="Left" Mode="Alternate">
+						<suki:TimelineItem
+							Content="Step 1"
+							Header="第一步"
+							Position="Left"
+							Type="Default" />
+						<suki:TimelineItem
+							Content="Step 2"
+							Header="第二步"
+							Position="Right"
+							Type="Success" />
+						<suki:TimelineItem
+							Content="Step 3"
+							Header="第三步"
+							Position="Separate"
+							Type="Warning" />
+						<suki:TimelineItem
+							Content="Step 4"
+							Header="第四步"
+							Position="Separate"
+							Type="Ongoing" />
+						<suki:TimelineItem
+							Content="Step 5"
+							Header="第五步"
+							Position="Separate"
+							TimeFormat="yyyy-MM-dd"
+							Time="2022-12-13"
+							Type="Error" />
+					</suki:Timeline>
+				</WrapPanel>
+			</suki:MobileGroupBox>
+
+
+			<suki:MobileGroupBox Header="GridSplitter">
+				<Grid
+		   Width="300"
+		   Height="300"
+		   ColumnDefinitions="*, Auto, *">
+					<Border
+						HorizontalAlignment="Stretch"
+						Background="#FEFBCB"
+						CornerRadius="10" />
+					<GridSplitter Grid.Column="1" ShowsPreview="True" />
+					<Border
+						Grid.Column="2"
+						HorizontalAlignment="Stretch"
+						Background="#FEFBCB"
+						CornerRadius="10" />
+				</Grid>
+				</suki:MobileGroupBox>
+
+			<suki:MobileGroupBox Header="Pagination">
+				<suki:Pagination
+		 Name="page"
+		 PageSizeOptions="10, 20, 50, 100"
+		 ShowPageSizeSelector="True"
+		 TotalCount="600" />
+			</suki:MobileGroupBox>
+
+			<suki:MobileGroupBox Header="Carousel">
+				<StackPanel Spacing="20">
+					<Carousel Theme="{DynamicResource FullCarousel}">
+						<Carousel.PageTransition>
+							<PageSlide Orientation="Horizontal" Duration="0.25" />
+						</Carousel.PageTransition>
+						<Border Height="200" Background="#EAF5FF">
+							<TextBlock Text="Text 1" />
+						</Border>
+						<Border Height="200" Background="#F9F9F9">
+							<TextBlock Text="Text 2" />
+						</Border>
+						<Border Height="200" Background="#FFF8EA">
+							<TextBlock Text="Text 3" />
+						</Border>
+						<Border Height="200" Background="#FEF2ED">
+							<TextBlock Text="Text 4" />
+						</Border>
+					</Carousel>
+					<Carousel Classes="Line" Theme="{DynamicResource FullCarousel}">
+						<Carousel.PageTransition>
+							<PageSlide Orientation="Horizontal" Duration="0.25" />
+						</Carousel.PageTransition>
+						<Border Height="200" Background="#EAF5FF">
+							<TextBlock Text="Text 1" />
+						</Border>
+						<Border Height="200" Background="#F9F9F9">
+							<TextBlock Text="Text 2" />
+						</Border>
+						<Border Height="200" Background="#FFF8EA">
+							<TextBlock Text="Text 3" />
+						</Border>
+						<Border Height="200" Background="#FEF2ED">
+							<TextBlock Text="Text 4" />
+						</Border>
+					</Carousel>
+				</StackPanel>
+			</suki:MobileGroupBox>
+
+			<suki:MobileGroupBox Header="Lists">
+				<StackPanel Spacing="20">
+					<ListBox ItemsSource="{Binding Lists}" />
+
+					
+					
+					<ListBox Theme="{DynamicResource RadioGroupListBox}" ItemsSource="{Binding Lists}"/>
+					
+				    <ListBox Theme="{DynamicResource ButtonRadioGroupListBox}" ItemsSource="{Binding Lists}"/>
+
+					<ListBox
+					   Theme="{DynamicResource CardRadioGroupListBox}" ItemsSource="{Binding Lists}" />
+
+					<ListBox Theme="{DynamicResource PureCardRadioGroupListBox}" ItemsSource="{Binding Lists}"/>
+
+					<ListBox Theme="{DynamicResource CheckGroupListBox}" ItemsSource="{Binding Lists}"/>
+					
+					 
+
+					
+
+					
+
+					<ListBox Theme="{DynamicResource CardCheckGroupListBox}" ItemsSource="{Binding Lists}"/>
+					
+
+
+
+
+				</StackPanel>
+				
+			</suki:MobileGroupBox>
+			
+		</StackPanel>
+	</suki:SliverPageLong>
+</UserControl>

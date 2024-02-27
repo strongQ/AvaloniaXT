@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=netstandard">
     <Color x:Key="SukiBackground">Transparent</Color>
+	<Color x:Key="MainBackground">White</Color>
     <Color x:Key="SukiStrongBackground">#eaeaea</Color>
     <Color x:Key="SukiLightBackground">Transparent</Color>
     <Color x:Key="SukiCardBackground">#fafafa</Color>
@@ -18,10 +19,15 @@
 
     <Color x:Key="SukiText">#222222</Color>
     <Color x:Key="SukiLowText">#555555</Color>
+    <Color x:Key="SukiDisabledText">#ABABAB</Color>
+
+	<Color x:Key="ListSeparator">#11333333</Color>
+	
+	 <Color x:Key="Accent">#0A59F7</Color>
 
     <BoxShadows x:Key="SukiLowShadow">0 0 3 0 #eaeaea</BoxShadows>
     <BoxShadows x:Key="SukiSwitchShadow">0 1 3 0 #c1c1c1</BoxShadows>
-    <BoxShadows x:Key="SukiPopupShadow">1 1 5 0 LightGray</BoxShadows>
+    <BoxShadows x:Key="SukiPopupShadow">1 1 8 0 LightGray</BoxShadows>
     <BoxShadows x:Key="SukiBigPopupShadow">1 1 15 0 #dedede</BoxShadows>
 
     <system:Boolean x:Key="IsDark">False</system:Boolean>
@@ -30,4 +36,30 @@
     <system:Double x:Key="GlassOpacity">0.8</system:Double>
     <system:Double x:Key="GlassOpacityDark">0.5</system:Double>
     <system:Double x:Key="GlassOpacityLight">0.8</system:Double>
+
+	<SolidColorBrush x:Key="DefaultTimelineIconForeground" Opacity="0.13" Color="#FF2E3238" />
+	<SolidColorBrush x:Key="OngoingTimelineIconForeground" Color="#FF0077FA" />
+	<SolidColorBrush x:Key="SuccessTimelineIconForeground" Color="#FF3BB346" />
+	<SolidColorBrush x:Key="WarningTimelineIconForeground" Color="#FFFC8800" />
+	<SolidColorBrush x:Key="ErrorTimelineIconForeground" Color="#FFF93920" />
+	<SolidColorBrush x:Key="TimelineLineBrush" Opacity="0.13" Color="#FF2E3238" />
+
+	<SolidColorBrush x:Key="PaginationButtonSelectedBackground" Color="#FFEAF5FF" />
+
+	<SolidColorBrush x:Key="GridSplitterBackground" Opacity="0.08" Color="#1C1F23" />
+	<SolidColorBrush x:Key="GridSplitterPreviewBackground" Color="#CBE7FE" />
+
+	<SolidColorBrush x:Key="CarouselButtonForeground" Opacity="0.5" Color="Black" />
+	<SolidColorBrush x:Key="CarouselButtonPointeroverForeground" Opacity="0.7" Color="Black" />
+	<SolidColorBrush x:Key="CarouselButtonPressedForeground" Opacity="0.7" Color="Black" />
+	<SolidColorBrush x:Key="CarouselIndicatorForeground" Opacity="0.5" Color="Black" />
+	<SolidColorBrush x:Key="CarouselIndicatorPointeroverForeground" Opacity="0.7" Color="Black" />
+	<SolidColorBrush x:Key="CarouselIndicatorPressedForeground" Opacity="0.7" Color="Black" />
+	<SolidColorBrush x:Key="CarouselIndicatorSelectedForeground" Color="Black" />
+
+	<SolidColorBrush x:Key="ListBoxItemDisabledForeground" Opacity="0.35" Color="#1C1F23" />
+	<SolidColorBrush x:Key="ListBoxItemDisabledBackground" Color="Transparent" />
+	
+	<SolidColorBrush x:Key="ListBoxItemSelectedDisabledBackground" Opacity="0.02" Color="#2E3238" />
+
 </ResourceDictionary>

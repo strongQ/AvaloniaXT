@@ -1,0 +1,34 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:suki="clr-namespace:SukiUI.Controls"           
+             >
+	<ControlTheme x:Key="{x:Type suki:ImageViewer}" TargetType="suki:ImageViewer">
+		<Setter Property="Background" Value="LightGray" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="{x:Type suki:ImageViewer}">
+				<VisualLayerManager Name="{x:Static suki:ImageViewer.PART_Layer}">
+					<Border Background="{TemplateBinding Background}" ClipToBounds="True">
+						<Image
+                            Name="{x:Static suki:ImageViewer.PART_Image}"
+                            Source="{TemplateBinding Source}"
+                            Stretch="Uniform">
+							<Image.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform ScaleX="{Binding Scale, RelativeSource={RelativeSource TemplatedParent}}" ScaleY="{Binding Scale, RelativeSource={RelativeSource TemplatedParent}}" />
+									<TranslateTransform X="{Binding TranslateX, RelativeSource={RelativeSource TemplatedParent}}" Y="{Binding TranslateY, RelativeSource={RelativeSource TemplatedParent}}" />
+									<RotateTransform Angle="0" />
+								</TransformGroup>
+							</Image.RenderTransform>
+						</Image>
+					</Border>
+				</VisualLayerManager>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:moving">
+			<Setter Property="Cursor" Value="Hand" />
+		</Style>
+	</ControlTheme>
+
+</ResourceDictionary>

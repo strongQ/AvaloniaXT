@@ -1,15 +1,21 @@
 ﻿using Avalonia.Collections;
+using Avalonia.Controls;
 using Avalonia.Styling;
+using AvaloniaXT.Interfaces;
 using AvaloniaXT.Services;
 using AvaloniaXT.Utilities;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+
 using Microsoft.Extensions.DependencyInjection;
+using NetCoreAudio;
 using SukiUI;
 using SukiUI.Controls;
 using SukiUI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using XT.Common.Interfaces;
 
@@ -18,6 +24,7 @@ namespace AvaloniaXT.ViewModels
     public partial class MainViewModel : ViewModelBase
     {
         private readonly SukiTheme _theme;
+      
 
         public MainViewModel(IEnumerable<XTPageBase> xtPages, PageNavigationService nav,IApiConfig config)
         {
@@ -26,10 +33,10 @@ namespace AvaloniaXT.ViewModels
             _theme = SukiTheme.GetInstance();
             Themes = _theme.ColorThemes;
             BaseTheme = _theme.ActiveBaseTheme;
-            _theme.OnBaseThemeChanged += async variant =>
+            _theme.OnBaseThemeChanged +=  variant =>
             {
                 BaseTheme = variant;
-                await SukiHost.ShowToast("Successfully Changed Theme", $"Changed Theme To {variant}");
+                 InteractiveContainer.ShowToast($"Successfully Changed Theme,Changed Theme To {variant}");
             };
             nav.NavigationRequested += t =>
             {
@@ -38,9 +45,18 @@ namespace AvaloniaXT.ViewModels
                 ActivePage = page;
             };
             _theme.OnColorThemeChanged += async theme =>
-          await SukiHost.ShowToast("Successfully Changed Color", $"Changed Color To {theme.DisplayName}.");
+           InteractiveContainer.ShowToast($"Successfully Changed Color,Changed Color To {theme.DisplayName}.");
             _theme.OnBackgroundAnimationChanged +=
            value => AnimationsEnabled = value;
+
+
+            var menuService = Register.App.GetService<IMenuToolService>();
+            if(menuService != null)
+            {
+                ShowSearch=menuService.ShowSearch;
+                ShowAudio = menuService.ShowAudio;
+              
+            }
         }
 #pragma warning disable CA1822 // Mark members as static
        
@@ -52,6 +68,25 @@ namespace AvaloniaXT.ViewModels
         [ObservableProperty] private ThemeVariant _baseTheme;
         [ObservableProperty] private bool _animationsEnabled;
         [ObservableProperty] private XTPageBase? _activePage;
+
+        [ObservableProperty] private bool _showSearch;
+
+        [ObservableProperty] private bool _showAudio;
+
+        /// <summary>
+        /// 点击搜索
+        /// </summary>
+        [RelayCommand]
+        public async void SearchClick()
+        {
+            var menuService = Register.App.GetService<IMenuToolService>();
+            if (menuService != null)
+            {
+                await menuService.SearchClick();
+
+            }
+        }
+        
 
         [RelayCommand]
         public void ToggleBaseTheme() =>
@@ -68,11 +103,30 @@ namespace AvaloniaXT.ViewModels
             return SukiHost.ShowToast(title, content);
         }
         [RelayCommand]
-        public void OpenSetting(string url) => SukiHost.ShowDialog(Register.App.GetKeyedService<XTPageBase>("Setting"));
+        public void OpenSetting(string url) => InteractiveContainer.ShowDialog(Register.App.GetKeyedService<XTPageBase>("Setting"));
 
         public void ChangeTheme(SukiColorTheme theme) =>
         _theme.ChangeColorTheme(theme);
 
 
+        public void PlayAudio(bool play)
+        {
+            var menuService = Register.App.GetService<IMenuToolService>();
+
+            if (menuService != null)
+            {
+                menuService.ShowAudio = play;
+            }
+           
+            
+            if (!play)
+            {
+                var audio = Register.App.GetService<AudioPlayService>();
+                audio.PlayAudio(play);
+            }
+           
+        }
+
+       
     }
 }

@@ -7,26 +7,38 @@
 		 xmlns:models="clr-namespace:SukiUI.Models;assembly=SukiUI"
 		xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
 		xmlns:views="clr-namespace:AvaloniaXT.Views"
+		xmlns:i="using:AvaloniaXT.Services"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AvaloniaXT.Views.MainWindow"
 		x:DataType="vm:MainViewModel"
         Icon="/Assets/avalonia-logo.ico"
-		IsMenuVisible="True"
-        Title="AvaloniaXT">
+		IsMenuVisible="false"
+        >
 	<suki:SukiWindow.LogoContent>
 		<avalonia:MaterialIcon Width="20"
                                Height="20"
                                VerticalAlignment="Center"
                                Foreground="{DynamicResource SukiPrimaryColor}"
-                               Kind="Dog" />
+                               Kind="MicrosoftDotNet" />
 	</suki:SukiWindow.LogoContent>
+
+	<suki:SukiWindow.TopContent>
+		<Button IsVisible="{Binding ShowAudio}" Classes="Basic Rounded WindowControlsButton" Click="Alarm_OnClick">
+			<avalonia:MaterialIcon Name="AlarmIcon"   Width="20"
+                               Height="20"
+                               VerticalAlignment="Center"
+                               Foreground="{DynamicResource SukiPrimaryColor}"
+                               Kind="VolumeHigh" />
+		</Button>
+		
+	</suki:SukiWindow.TopContent>
 	<suki:SukiWindow.MenuItems>
-		<MenuItem Header="Toggles">
+		<MenuItem Header="{x:Static i:LangurageService.Theme}">
 			<MenuItem Command="{Binding ToggleBaseThemeCommand}" Header="{Binding BaseTheme}" />
-			<MenuItem Command="{Binding ToggleAnimationsCommand}" Header="Animations" />
+			<!--<MenuItem Command="{Binding ToggleAnimationsCommand}" Header="Animations" />-->
 		</MenuItem>
 		<MenuItem Click="MenuItem_OnClick"
-                  Header="Themes"
+                  Header="{x:Static i:LangurageService.Color}"
                   ItemsSource="{Binding Themes}">
 			<MenuItem.DataTemplates>
 				<DataTemplate DataType="{x:Type models:SukiColorTheme}">
@@ -34,13 +46,16 @@
 				</DataTemplate>
 			</MenuItem.DataTemplates>
 		</MenuItem>
-		<!--<MenuItem Header="Other">
-			<MenuItem Command="{Binding CreateCustomThemeCommand}" Header="Create Custom Theme" />
-		</MenuItem>-->
+		<MenuItem Header="{x:Static i:LangurageService.Search}" IsVisible="{Binding ShowSearch}" Command="{Binding SearchClickCommand}">
+		
+		</MenuItem>
 	</suki:SukiWindow.MenuItems>
 
+
+
+	<views:PhoneMainView></views:PhoneMainView>
 	
-		<views:MainView />
+	
 	
         
 	

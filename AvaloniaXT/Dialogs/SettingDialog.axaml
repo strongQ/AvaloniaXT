@@ -9,13 +9,13 @@
              x:Class="AvaloniaXT.Dialogs.SettingDialog">
 	<controls:GroupBox Header="Setting Url">
 		<StackPanel Classes="HeaderContent">
-			<TextBlock>
+			<TextBlock Foreground="{DynamicResource SukiText}">
 				Please Setting Remote Call Api Url
 			</TextBlock>
 
-			<TextBox Text="{Binding Url}" Watermark="Api Url" />
-			
-			
+			<TextBox  Text="{Binding Url}" Watermark="Api Url" />
+
+
 			<Button HorizontalContentAlignment="Center"
                     Command="{Binding CloseDialogCommand}"
                     Content="Close" />

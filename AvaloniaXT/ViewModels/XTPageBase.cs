@@ -16,6 +16,9 @@ namespace AvaloniaXT.ViewModels
         [ObservableProperty] private int _index = index;
         [ObservableProperty]
         private bool _isLoading = false;
+
+        
+
         /// <summary>
         /// 获取视图
         /// </summary>

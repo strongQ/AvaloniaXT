@@ -3,99 +3,48 @@
   "WorkspaceRootPath": "E:\\github\\AvaloniaXT\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DB88DF08-EB0B-4157-BC5D-5B61111320F3}|AvaloniaXT.Desktop\\AvaloniaXT.Desktop.csproj|e:\\github\\avaloniaxt\\avaloniaxt.desktop\\rd.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{DB88DF08-EB0B-4157-BC5D-5B61111320F3}|AvaloniaXT.Desktop\\AvaloniaXT.Desktop.csproj|solutionrelative:avaloniaxt.desktop\\rd.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|e:\\github\\avaloniaxt\\avaloniaxt\\views\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|solutionrelative:avaloniaxt\\views\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|e:\\github\\avaloniaxt\\avaloniaxt\\avaloniaxt.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|solutionrelative:avaloniaxt\\avaloniaxt.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|e:\\github\\avaloniaxt\\avaloniaxt\\utilities\\sukiwindowutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|solutionrelative:avaloniaxt\\utilities\\sukiwindowutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\pages\\onefloorpage.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\pages\\onefloorpage.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\selectors\\ecstagselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\selectors\\ecstagselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\apis\\apijsoncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\apis\\apijsoncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|e:\\github\\avaloniaxt\\avaloniaxt\\views\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|solutionrelative:avaloniaxt\\views\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\apis\\ecstagapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\apis\\ecstagapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|e:\\github\\avaloniaxt\\avaloniaxt\\utilities\\urlutilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|solutionrelative:avaloniaxt\\utilities\\urlutilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|e:\\github\\avaloniaxt\\avaloniaxt\\dialogs\\settingdialogviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|solutionrelative:avaloniaxt\\dialogs\\settingdialogviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\viewmodels\\basefloorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\viewmodels\\basefloorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\apis\\apijsoncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\apis\\apijsoncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\services\\menutoolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\services\\menutoolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|e:\\github\\avaloniaxt\\avaloniaxt\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|solutionrelative:avaloniaxt\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\xtexternalpage.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\xtexternalpage.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\app.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\app.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+      "AbsoluteMoniker": "D:0:0:{976FA122-A72D-474A-87B6-CBD92ABB6277}|AvaloniaXT.Android\\AvaloniaXT.Android.csproj|e:\\github\\avaloniaxt\\avaloniaxt.android\\avaloniaxt.android.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{976FA122-A72D-474A-87B6-CBD92ABB6277}|AvaloniaXT.Android\\AvaloniaXT.Android.csproj|solutionrelative:avaloniaxt.android\\avaloniaxt.android.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DB88DF08-EB0B-4157-BC5D-5B61111320F3}|AvaloniaXT.Desktop\\AvaloniaXT.Desktop.csproj|e:\\github\\avaloniaxt\\avaloniaxt.desktop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DB88DF08-EB0B-4157-BC5D-5B61111320F3}|AvaloniaXT.Desktop\\AvaloniaXT.Desktop.csproj|solutionrelative:avaloniaxt.desktop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|e:\\github\\avaloniaxt\\avaloniaxt\\avaloniaxt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5E00D579-3188-4971-82B5-375DC76CCB50}|AvaloniaXT\\AvaloniaXT.csproj|solutionrelative:avaloniaxt\\avaloniaxt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DB88DF08-EB0B-4157-BC5D-5B61111320F3}|AvaloniaXT.Desktop\\AvaloniaXT.Desktop.csproj|e:\\github\\avaloniaxt\\avaloniaxt.desktop\\avaloniaxt.desktop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{DB88DF08-EB0B-4157-BC5D-5B61111320F3}|AvaloniaXT.Desktop\\AvaloniaXT.Desktop.csproj|solutionrelative:avaloniaxt.desktop\\avaloniaxt.desktop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\viewmodels\\threefloorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\viewmodels\\threefloorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\viewmodels\\twofloorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\viewmodels\\twofloorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\viewmodels\\onefloorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\viewmodels\\onefloorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\converters\\unittagcolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\converters\\unittagcolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\services\\dbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\services\\dbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\pages\\onefloorpage.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\pages\\onefloorpage.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\models\\equiptypeenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\models\\equiptypeenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\models\\unittagmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\models\\unittagmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zq\\AppData\\Local\\Temp\\VSGeneratedDocuments\\9d061e25-42db-7ef0-9f33-42e10d64d636\\XTExternalPage.Models.UnitTagModel.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|e:\\github\\avaloniaxt\\xtexternalpage\\viewmodels\\phonetestviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B29A4003-BA54-48C8-87C8-0709608220BD}|XTExternalPage\\XTExternalPage.csproj|solutionrelative:xtexternalpage\\viewmodels\\phonetestviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -105,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -133,311 +82,144 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SukiWindowUtils.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\AvaloniaXT\\Utilities\\SukiWindowUtils.cs",
-              "RelativeDocumentMoniker": "AvaloniaXT\\Utilities\\SukiWindowUtils.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\AvaloniaXT\\Utilities\\SukiWindowUtils.cs",
-              "RelativeToolTip": "AvaloniaXT\\Utilities\\SukiWindowUtils.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-25T02:07:32.247Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UrlUtilities.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\AvaloniaXT\\Utilities\\UrlUtilities.cs",
-              "RelativeDocumentMoniker": "AvaloniaXT\\Utilities\\UrlUtilities.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\AvaloniaXT\\Utilities\\UrlUtilities.cs",
-              "RelativeToolTip": "AvaloniaXT\\Utilities\\UrlUtilities.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-25T02:02:04.862Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SettingDialogViewModel.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\AvaloniaXT\\Dialogs\\SettingDialogViewModel.cs",
-              "RelativeDocumentMoniker": "AvaloniaXT\\Dialogs\\SettingDialogViewModel.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\AvaloniaXT\\Dialogs\\SettingDialogViewModel.cs",
-              "RelativeToolTip": "AvaloniaXT\\Dialogs\\SettingDialogViewModel.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAADwvxkAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-25T01:59:47.383Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "App.axaml.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\App.axaml.cs",
-              "RelativeDocumentMoniker": "XTExternalPage\\App.axaml.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\App.axaml.cs",
-              "RelativeToolTip": "XTExternalPage\\App.axaml.cs",
-              "ViewState": "AQIAADIAAACAmZmZmZktwDgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-25T01:52:26.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "App.axaml",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\App.axaml",
-              "RelativeDocumentMoniker": "XTExternalPage\\App.axaml",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\App.axaml",
-              "RelativeToolTip": "XTExternalPage\\App.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-01-25T01:48:28.535Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\AvaloniaXT.Desktop\\Program.cs",
-              "RelativeDocumentMoniker": "AvaloniaXT.Desktop\\Program.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\AvaloniaXT.Desktop\\Program.cs",
-              "RelativeToolTip": "AvaloniaXT.Desktop\\Program.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAAwBkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-25T01:43:48.455Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AvaloniaXT",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\AvaloniaXT\\AvaloniaXT.csproj",
-              "RelativeDocumentMoniker": "AvaloniaXT\\AvaloniaXT.csproj",
-              "ToolTip": "E:\\github\\AvaloniaXT\\AvaloniaXT\\AvaloniaXT.csproj",
-              "RelativeToolTip": "AvaloniaXT\\AvaloniaXT.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-01-25T01:41:31.978Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "rd.xml",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\AvaloniaXT.Desktop\\rd.xml",
-              "RelativeDocumentMoniker": "AvaloniaXT.Desktop\\rd.xml",
-              "ToolTip": "E:\\github\\AvaloniaXT\\AvaloniaXT.Desktop\\rd.xml",
-              "RelativeToolTip": "AvaloniaXT.Desktop\\rd.xml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2024-01-25T01:34:56.879Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "XTExternalPage",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\XTExternalPage.csproj",
-              "RelativeDocumentMoniker": "XTExternalPage\\XTExternalPage.csproj",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\XTExternalPage.csproj",
-              "RelativeToolTip": "XTExternalPage\\XTExternalPage.csproj",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAA4AAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-01-25T01:30:49.337Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AvaloniaXT.Desktop",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\AvaloniaXT.Desktop\\AvaloniaXT.Desktop.csproj",
-              "RelativeDocumentMoniker": "AvaloniaXT.Desktop\\AvaloniaXT.Desktop.csproj",
-              "ToolTip": "E:\\github\\AvaloniaXT\\AvaloniaXT.Desktop\\AvaloniaXT.Desktop.csproj",
-              "RelativeToolTip": "AvaloniaXT.Desktop\\AvaloniaXT.Desktop.csproj",
-              "ViewState": "AQIAABMAAAAAAAAAAAAAwBcAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-01-25T01:04:08.214Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "TwoFloorViewModel.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\ViewModels\\TwoFloorViewModel.cs",
-              "RelativeDocumentMoniker": "XTExternalPage\\ViewModels\\TwoFloorViewModel.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\ViewModels\\TwoFloorViewModel.cs",
-              "RelativeToolTip": "XTExternalPage\\ViewModels\\TwoFloorViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Title": "MainWindow.axaml.cs",
+              "DocumentMoniker": "E:\\github\\AvaloniaXT\\AvaloniaXT\\Views\\MainWindow.axaml.cs",
+              "RelativeDocumentMoniker": "AvaloniaXT\\Views\\MainWindow.axaml.cs",
+              "ToolTip": "E:\\github\\AvaloniaXT\\AvaloniaXT\\Views\\MainWindow.axaml.cs \u2B24",
+              "RelativeToolTip": "AvaloniaXT\\Views\\MainWindow.axaml.cs \u2B24",
+              "ViewState": "AQIAABMAAACAmZmZmZkvwCIAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-25T01:03:47.228Z",
+              "WhenOpened": "2024-02-27T00:52:06.649Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ThreeFloorViewModel.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\ViewModels\\ThreeFloorViewModel.cs",
-              "RelativeDocumentMoniker": "XTExternalPage\\ViewModels\\ThreeFloorViewModel.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\ViewModels\\ThreeFloorViewModel.cs",
-              "RelativeToolTip": "XTExternalPage\\ViewModels\\ThreeFloorViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-25T01:03:44.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "OneFloorViewModel.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\ViewModels\\OneFloorViewModel.cs",
-              "RelativeDocumentMoniker": "XTExternalPage\\ViewModels\\OneFloorViewModel.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\ViewModels\\OneFloorViewModel.cs",
-              "RelativeToolTip": "XTExternalPage\\ViewModels\\OneFloorViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-25T01:03:14.228Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DbService.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\Services\\DbService.cs",
-              "RelativeDocumentMoniker": "XTExternalPage\\Services\\DbService.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\Services\\DbService.cs",
-              "RelativeToolTip": "XTExternalPage\\Services\\DbService.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-25T00:56:11.429Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BaseFloorViewModel.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\ViewModels\\BaseFloorViewModel.cs",
-              "RelativeDocumentMoniker": "XTExternalPage\\ViewModels\\BaseFloorViewModel.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\ViewModels\\BaseFloorViewModel.cs",
-              "RelativeToolTip": "XTExternalPage\\ViewModels\\BaseFloorViewModel.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAqwBMAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-25T00:51:43.27Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "OneFloorPage.axaml.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\Pages\\OneFloorPage.axaml.cs",
-              "RelativeDocumentMoniker": "XTExternalPage\\Pages\\OneFloorPage.axaml.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\Pages\\OneFloorPage.axaml.cs",
-              "RelativeToolTip": "XTExternalPage\\Pages\\OneFloorPage.axaml.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAIwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-25T00:49:54.292Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OneFloorPage.axaml",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\Pages\\OneFloorPage.axaml",
-              "RelativeDocumentMoniker": "XTExternalPage\\Pages\\OneFloorPage.axaml",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\Pages\\OneFloorPage.axaml",
-              "RelativeToolTip": "XTExternalPage\\Pages\\OneFloorPage.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-01-25T00:47:47.693Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "EquipTypeEnum.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\Models\\EquipTypeEnum.cs",
-              "RelativeDocumentMoniker": "XTExternalPage\\Models\\EquipTypeEnum.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\Models\\EquipTypeEnum.cs",
-              "RelativeToolTip": "XTExternalPage\\Models\\EquipTypeEnum.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-24T09:26:28.19Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UnitTagModel.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\Models\\UnitTagModel.cs",
-              "RelativeDocumentMoniker": "XTExternalPage\\Models\\UnitTagModel.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\Models\\UnitTagModel.cs",
-              "RelativeToolTip": "XTExternalPage\\Models\\UnitTagModel.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAABkAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-24T09:26:23.715Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "XTExternalPage.Models.UnitTagModel.g.cs",
-              "DocumentMoniker": "C:\\Users\\zq\\AppData\\Local\\Temp\\VSGeneratedDocuments\\9d061e25-42db-7ef0-9f33-42e10d64d636\\XTExternalPage.Models.UnitTagModel.g.cs",
-              "ToolTip": "XTExternalPage.Models.UnitTagModel.g.cs [\u7531 CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator \u751F\u6210]",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "OverriddenToolTip": "XTExternalPage.Models.UnitTagModel.g.cs [\u7531 CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator \u751F\u6210]",
-              "WhenOpened": "2024-01-24T09:26:22.002Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EcsTagSelector.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\Selectors\\EcsTagSelector.cs",
-              "RelativeDocumentMoniker": "XTExternalPage\\Selectors\\EcsTagSelector.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\Selectors\\EcsTagSelector.cs",
-              "RelativeToolTip": "XTExternalPage\\Selectors\\EcsTagSelector.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBcAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-24T09:26:13.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UnitTagColorConverter.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\Converters\\UnitTagColorConverter.cs",
-              "RelativeDocumentMoniker": "XTExternalPage\\Converters\\UnitTagColorConverter.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\Converters\\UnitTagColorConverter.cs",
-              "RelativeToolTip": "XTExternalPage\\Converters\\UnitTagColorConverter.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAIwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-24T09:24:10.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ApiJsonContext.cs",
-              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\Apis\\ApiJsonContext.cs",
-              "RelativeDocumentMoniker": "XTExternalPage\\Apis\\ApiJsonContext.cs",
-              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\Apis\\ApiJsonContext.cs",
-              "RelativeToolTip": "XTExternalPage\\Apis\\ApiJsonContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwoAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-24T09:23:49.241Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "EcsTagApi.cs",
               "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\Apis\\EcsTagApi.cs",
               "RelativeDocumentMoniker": "XTExternalPage\\Apis\\EcsTagApi.cs",
               "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\Apis\\EcsTagApi.cs",
               "RelativeToolTip": "XTExternalPage\\Apis\\EcsTagApi.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAAwCEAAABjAAAA",
+              "ViewState": "AQIAAAkAAAAAmpmZmZkVwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-24T09:23:42.651Z",
+              "WhenOpened": "2024-02-27T00:49:50.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApiJsonContext.cs",
+              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\Apis\\ApiJsonContext.cs",
+              "RelativeDocumentMoniker": "XTExternalPage\\Apis\\ApiJsonContext.cs",
+              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\Apis\\ApiJsonContext.cs",
+              "RelativeToolTip": "XTExternalPage\\Apis\\ApiJsonContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T00:49:49.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.axaml",
+              "DocumentMoniker": "E:\\github\\AvaloniaXT\\AvaloniaXT\\Views\\MainWindow.axaml",
+              "RelativeDocumentMoniker": "AvaloniaXT\\Views\\MainWindow.axaml",
+              "ToolTip": "E:\\github\\AvaloniaXT\\AvaloniaXT\\Views\\MainWindow.axaml",
+              "RelativeToolTip": "AvaloniaXT\\Views\\MainWindow.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-02-27T00:47:41.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Register.cs",
+              "DocumentMoniker": "E:\\github\\AvaloniaXT\\AvaloniaXT\\Register.cs",
+              "RelativeDocumentMoniker": "AvaloniaXT\\Register.cs",
+              "ToolTip": "E:\\github\\AvaloniaXT\\AvaloniaXT\\Register.cs",
+              "RelativeToolTip": "AvaloniaXT\\Register.cs",
+              "ViewState": "AQIAADsAAADAzMzMzMwkwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T00:46:40.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "XTExternalPage",
+              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\XTExternalPage.csproj",
+              "RelativeDocumentMoniker": "XTExternalPage\\XTExternalPage.csproj",
+              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\XTExternalPage.csproj",
+              "RelativeToolTip": "XTExternalPage\\XTExternalPage.csproj",
+              "ViewState": "AQIAAAYAAAAAAAAAAADwvwsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-27T00:45:02.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AvaloniaXT.Android",
+              "DocumentMoniker": "E:\\github\\AvaloniaXT\\AvaloniaXT.Android\\AvaloniaXT.Android.csproj",
+              "RelativeDocumentMoniker": "AvaloniaXT.Android\\AvaloniaXT.Android.csproj",
+              "ToolTip": "E:\\github\\AvaloniaXT\\AvaloniaXT.Android\\AvaloniaXT.Android.csproj",
+              "RelativeToolTip": "AvaloniaXT.Android\\AvaloniaXT.Android.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvxEAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-27T00:43:43.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AvaloniaXT",
+              "DocumentMoniker": "E:\\github\\AvaloniaXT\\AvaloniaXT\\AvaloniaXT.csproj",
+              "RelativeDocumentMoniker": "AvaloniaXT\\AvaloniaXT.csproj",
+              "ToolTip": "E:\\github\\AvaloniaXT\\AvaloniaXT\\AvaloniaXT.csproj",
+              "RelativeToolTip": "AvaloniaXT\\AvaloniaXT.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-27T00:42:55.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PhoneTestViewModel.cs",
+              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\ViewModels\\PhoneTestViewModel.cs",
+              "RelativeDocumentMoniker": "XTExternalPage\\ViewModels\\PhoneTestViewModel.cs",
+              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\ViewModels\\PhoneTestViewModel.cs",
+              "RelativeToolTip": "XTExternalPage\\ViewModels\\PhoneTestViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T00:42:37.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MenuToolService.cs",
+              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\Services\\MenuToolService.cs",
+              "RelativeDocumentMoniker": "XTExternalPage\\Services\\MenuToolService.cs",
+              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\Services\\MenuToolService.cs",
+              "RelativeToolTip": "XTExternalPage\\Services\\MenuToolService.cs",
+              "ViewState": "AQIAACAAAAAAzMzMzMz8vwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T00:41:29.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.axaml.cs",
+              "DocumentMoniker": "E:\\github\\AvaloniaXT\\XTExternalPage\\App.axaml.cs",
+              "RelativeDocumentMoniker": "XTExternalPage\\App.axaml.cs",
+              "ToolTip": "E:\\github\\AvaloniaXT\\XTExternalPage\\App.axaml.cs",
+              "RelativeToolTip": "XTExternalPage\\App.axaml.cs",
+              "ViewState": "AQIAABsAAADAMjMzMzMrwDQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-25T01:52:26.387Z",
               "EditorCaption": ""
             }
           ]

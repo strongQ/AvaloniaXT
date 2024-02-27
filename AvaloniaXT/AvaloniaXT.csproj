@@ -4,10 +4,6 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-    <Authors>hihifun</Authors>
-    <Description>Avalonia App Page Helper Dll , Contains MainWindow，SukiUI，Support AOT</Description>
-    <PackageProjectUrl>https://github.com/strongQ/AvaloniaXT</PackageProjectUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   
   <ItemGroup>
@@ -15,10 +11,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+    <None Remove="Assets\alarm.wav" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,11 +22,42 @@
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="Material.Icons.Avalonia" Version="2.1.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="NetCoreAudio" Version="2.0.0" />
     <PackageReference Include="Projektanker.Icons.Avalonia.FontAwesome" Version="9.0.1" />
     <PackageReference Include="XT.Common" Version="1.1.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SukiUI\SukiUI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Lang\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Lang\Resources.en-US.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.en-US.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Lang\Resources.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Lang\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Audios\alarm.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

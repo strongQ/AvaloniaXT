@@ -1,0 +1,208 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:suki="clr-namespace:SukiUI.Controls"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Add Resources Here -->
+	<Design.PreviewWith>
+		<StackPanel Width="100" Spacing="20">
+			<suki:Timeline>
+				<suki:TimelineItem Content="Hello" />
+				<suki:TimelineItem Content="World" />
+				<suki:TimelineItem Content="!" />
+				<suki:TimelineItem />
+			</suki:Timeline>
+		</StackPanel>
+	</Design.PreviewWith>
+	<!--  Add Resources Here  -->
+	<suki:TimelineFormatConverter x:Key="FormatConverter" />
+
+	<suki:TimelineIconTemplateSelector x:Key="TimelineIconSelector" >
+		<SolidColorBrush x:Key="Default" Color="Gray"></SolidColorBrush>
+		<SolidColorBrush x:Key="Ongoing" Color="Blue"></SolidColorBrush>
+		<SolidColorBrush x:Key="Success" Color="Green"></SolidColorBrush>
+		<SolidColorBrush x:Key="Warning" Color="#FFFC8800"></SolidColorBrush>
+		<SolidColorBrush x:Key="Error" Color="Red"></SolidColorBrush>
+	</suki:TimelineIconTemplateSelector>
+	
+	<ControlTheme x:Key="{x:Type suki:Timeline}" TargetType="suki:Timeline">
+		<Setter Property="IconTemplate" Value="{StaticResource TimelineIconSelector}"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="suki:Timeline">
+				<ItemsPresenter ItemsPanel="{TemplateBinding ItemsPanel}" />
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<suki:TimelineItemTypeToIconForegroundConverter
+        x:Key="ForegroundConverter"
+        DefaultBrush="{DynamicResource DefaultTimelineIconForeground}"
+        ErrorBrush="{DynamicResource ErrorTimelineIconForeground}"
+        OngoingBrush="{DynamicResource OngoingTimelineIconForeground}"
+        SuccessBrush="{DynamicResource SuccessTimelineIconForeground}"
+        WarningBrush="{DynamicResource WarningTimelineIconForeground}" />
+
+	
+
+	<ControlTheme x:Key="{x:Type suki:TimelineItem}" TargetType="suki:TimelineItem">
+		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="VerticalAlignment" Value="Top" />
+		<Setter Property="suki:TimelineItem.Template">
+			<ControlTemplate TargetType="suki:TimelineItem">
+				<Grid
+                    Name="PART_RootGrid"
+                    ColumnDefinitions="Auto, Auto, Auto"
+                    RowDefinitions="Auto, Auto, Auto">
+					<!--  Icon and Axis  -->
+					<Grid
+                        Name="PART_IconAxisRoot"
+                        Grid.Row="0"
+                        Grid.RowSpan="3"
+                        Grid.Column="1"
+                        RowDefinitions="Auto, *">
+						<Panel Grid.Row="0" Name="{x:Static suki:TimelineItem.PART_Icon}">
+							<ContentPresenter
+                                Margin="8"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Content="{TemplateBinding Icon}"
+                                ContentTemplate="{TemplateBinding IconTemplate}" />
+							<Ellipse
+                                Name="PART_DefaultIcon"
+                                Width="12"
+                                Height="12"
+                                Margin="8"
+                                IsVisible="False"
+                                Fill="Gray" />
+						</Panel>
+						<Rectangle
+                            Grid.Row="1"
+                            Width="2"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Stretch"
+                            Classes="end"
+                            Fill="{DynamicResource TimelineLineBrush}" />
+					</Grid>
+					<ContentPresenter
+                        Name="{x:Static suki:TimelineItem.PART_Header}"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Margin="8,4"
+                        VerticalAlignment="Top"
+                        Content="{TemplateBinding Header}"
+                        ContentTemplate="{TemplateBinding HeaderTemplate}"
+                        FontSize="14"
+                        Foreground="{DynamicResource DefaultTimelineIconForeground}" />
+					<ContentPresenter
+                        Name="{x:Static suki:TimelineItem.PART_Content}"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Margin="8,2"
+                        VerticalAlignment="Top"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        TextElement.FontSize="12"
+                        TextElement.Foreground="Gray" />
+					<TextBlock
+                        Name="{x:Static suki:TimelineItem.PART_Time}"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="8,2"
+                        VerticalAlignment="Top"
+                        FontSize="12"
+                        Foreground="Gray"
+                        TextWrapping="Wrap">
+						<TextBlock.Text>
+							<MultiBinding Converter="{StaticResource FormatConverter}">
+								<Binding Path="Time" RelativeSource="{RelativeSource TemplatedParent}" />
+								<Binding Path="TimeFormat" RelativeSource="{RelativeSource TemplatedParent}" />
+							</MultiBinding>
+						</TextBlock.Text>
+					</TextBlock>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:last /template/ Rectangle.end">
+			<Setter Property="Rectangle.Fill" Value="Transparent" />
+		</Style>
+		<Style Selector="^:empty-icon /template/ Ellipse#PART_DefaultIcon">
+			<Setter Property="IsVisible" Value="True"/>
+		</Style>
+		<Style Selector="^:empty-icon[Type=Default] /template/ Ellipse#PART_DefaultIcon">
+			<Setter Property="Fill" Value="{DynamicResource DefaultTimelineIconForeground}"/>
+		</Style>
+		<Style Selector="^:empty-icon[Type=Error] /template/ Ellipse#PART_DefaultIcon">
+			<Setter Property="Fill" Value="{DynamicResource ErrorTimelineIconForeground}"/>
+		</Style>
+		<Style Selector="^:empty-icon[Type=Ongoing] /template/ Ellipse#PART_DefaultIcon">
+			<Setter Property="Fill" Value="{DynamicResource OngoingTimelineIconForeground}"/>
+		</Style>
+		<Style Selector="^:empty-icon[Type=Success] /template/ Ellipse#PART_DefaultIcon">
+			<Setter Property="Fill" Value="{DynamicResource SuccessTimelineIconForeground}"/>
+		</Style>
+		<Style Selector="^:empty-icon[Type=Warning] /template/ Ellipse#PART_DefaultIcon">
+			<Setter Property="Fill" Value="{DynamicResource WarningTimelineIconForeground}"/>
+		</Style>
+		<Style Selector="^:all-left">
+			<Style Selector="^ /template/ ContentPresenter#PART_Header">
+				<Setter Property="Grid.Row" Value="0" />
+				<Setter Property="Grid.Column" Value="2" />
+				<Setter Property="HorizontalContentAlignment" Value="Left" />
+				<Setter Property="HorizontalAlignment" Value="Left" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_Content">
+				<Setter Property="Grid.Row" Value="1" />
+				<Setter Property="Grid.Column" Value="2" />
+				<Setter Property="HorizontalContentAlignment" Value="Left" />
+				<Setter Property="HorizontalAlignment" Value="Left" />
+			</Style>
+			<Style Selector="^ /template/ TextBlock#PART_Time">
+				<Setter Property="Grid.Row" Value="2" />
+				<Setter Property="Grid.Column" Value="2" />
+				<Setter Property="TextAlignment" Value="Left" />
+				<Setter Property="HorizontalAlignment" Value="Left" />
+				<Setter Property="Margin" Value="8 2 8 12"></Setter>
+			</Style>
+		</Style>
+		<Style Selector="^:all-right">
+			<Style Selector="^ /template/ ContentPresenter#PART_Header">
+				<Setter Property="Grid.Row" Value="0" />
+				<Setter Property="Grid.Column" Value="0" />
+				<Setter Property="HorizontalContentAlignment" Value="Right" />
+				<Setter Property="HorizontalAlignment" Value="Right" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_Content">
+				<Setter Property="Grid.Row" Value="1" />
+				<Setter Property="Grid.Column" Value="0" />
+				<Setter Property="HorizontalContentAlignment" Value="Right" />
+				<Setter Property="HorizontalAlignment" Value="Right" />
+			</Style>
+			<Style Selector="^ /template/ TextBlock#PART_Time">
+				<Setter Property="Grid.Row" Value="2" />
+				<Setter Property="Grid.Column" Value="0" />
+				<Setter Property="TextAlignment" Value="Right" />
+				<Setter Property="HorizontalAlignment" Value="Right" />
+				<Setter Property="Margin" Value="8 2 8 12"></Setter>
+			</Style>
+		</Style>
+		<Style Selector="^:separate">
+			<Style Selector="^ /template/ ContentPresenter#PART_Header">
+				<Setter Property="Grid.Row" Value="0" />
+				<Setter Property="Grid.Column" Value="2" />
+				<Setter Property="HorizontalContentAlignment" Value="Left" />
+				<Setter Property="HorizontalAlignment" Value="Left" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_Content">
+				<Setter Property="Grid.Row" Value="1" />
+				<Setter Property="Grid.Column" Value="2" />
+				<Setter Property="HorizontalContentAlignment" Value="Left" />
+				<Setter Property="HorizontalAlignment" Value="Left" />
+				<Setter Property="Margin" Value="8 2 8 12"></Setter>
+			</Style>
+			<Style Selector="^ /template/ TextBlock#PART_Time">
+				<Setter Property="Grid.Row" Value="0" />
+				<Setter Property="Grid.Column" Value="0" />
+				<Setter Property="TextAlignment" Value="Right" />
+				<Setter Property="HorizontalAlignment" Value="Right" />
+			</Style>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

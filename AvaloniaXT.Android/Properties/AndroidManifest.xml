@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto">
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="AvaloniaXT" android:icon="@drawable/Icon" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<application  android:label="AvaloniaXT" android:icon="@drawable/Icon" android:networkSecurityConfig="@xml/network_security_config"/>
 </manifest>

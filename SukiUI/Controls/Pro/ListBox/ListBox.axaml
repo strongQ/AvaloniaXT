@@ -1,0 +1,796 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<ListBox Margin="30">
+			<ListBoxItem>Item 1</ListBoxItem>
+			<ListBoxItem>Item 2</ListBoxItem>
+			<ListBoxItem>Item 3</ListBoxItem>
+			<ListBoxItem IsEnabled="False" IsSelected="True">Item 3</ListBoxItem>
+			<ListBoxItem>Item 4</ListBoxItem>
+		</ListBox>
+	</Design.PreviewWith>
+
+	<PathGeometry x:Key="ListBoxItemCheckCheckGlyph">M17.4111 7.30848C18.0692 7.81171 18.1947 8.75312 17.6915 9.41119L11.1915 17.9112C10.909 18.2806 10.4711 18.4981 10.0061 18.5C9.54105 18.5019 9.10143 18.288 8.81592 17.9209L5.31592 13.4209C4.80731 12.767 4.92512 11.8246 5.57904 11.316C6.23296 10.8074 7.17537 10.9252 7.68398 11.5791L9.98988 14.5438L15.3084 7.58884C15.8116 6.93077 16.7531 6.80525 17.4111 7.30848Z</PathGeometry>
+	<PathGeometry x:Key="ListBoxItemCheckIndeterminateGlyph">M5 12.5C5 11.6716 5.67157 11 6.5 11H17.5C18.3284 11 19 11.6716 19 12.5C19 13.3284 18.3284 14 17.5 14H6.5C5.67157 14 5 13.3284 5 12.5Z</PathGeometry>
+	<ControlTheme x:Key="{x:Type ListBox}" TargetType="ListBox">
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
+		<Setter Property="ListBox.Template">
+			<ControlTemplate TargetType="ListBox">
+				<Border
+                    Name="border"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    ClipToBounds="{TemplateBinding ClipToBounds}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
+					<ScrollViewer
+                        Name="PART_ScrollViewer"
+                        AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+                        HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+                        IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+                        VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+						<ItemsPresenter
+                            Name="PART_ItemsPresenter"
+                            Margin="{TemplateBinding Padding}"
+                            ItemsPanel="{TemplateBinding ItemsPanel}" />
+					</ScrollViewer>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+	<ControlTheme x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem">
+		<Setter Property="ListBoxItem.Background" Value="Transparent" />
+		<Setter Property="ListBoxItem.Padding" Value="4,2" />
+		<Setter Property="ListBoxItem.Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<ContentPresenter
+                    Name="PART_ContentPresenter"
+                    Padding="{TemplateBinding Padding}"
+                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Content="{TemplateBinding Content}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    FontWeight="Normal"
+                    Foreground="{TemplateBinding Foreground}" />
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:disabled">
+			<Setter Property="Foreground" Value="{DynamicResource ListBoxItemDisabledForeground}" />
+			<Setter Property="Background" Value="Transparent" />
+			<Style Selector="^:selected">
+				<Setter Property="Background"
+                        Value="{DynamicResource ListBoxItemSelectedDisabledBackground}" />
+			</Style>
+		</Style>
+
+		<!--  Pointerover State  -->
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource SukiPrimaryColor25}" />
+		</Style>
+
+		 
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="{DynamicResource SukiPrimaryColor50}" />
+		</Style>
+
+		<!--  Selected State  -->
+		<Style Selector="^:selected">
+			<Setter Property="Background" Value="{DynamicResource SukiPrimaryColor25}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background"
+                        Value="{DynamicResource SukiPrimaryColor50}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+	<!-- RadioGroup -->
+	<ControlTheme x:Key="RadioGroupListBox" TargetType="ListBox">
+		<Setter Property="ListBox.ItemContainerTheme" Value="{DynamicResource RadioGroupListBoxItem}" />
+		<Setter Property="ListBox.ItemsPanel">
+			<ItemsPanelTemplate>
+				<StackPanel Orientation="Horizontal" />
+			</ItemsPanelTemplate>
+		</Setter>
+		<Setter Property="ListBox.Template">
+			<ControlTemplate TargetType="ListBox">
+				<Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    ClipToBounds="{TemplateBinding ClipToBounds}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
+					<ItemsPresenter
+                        Theme="{DynamicResource RadioGroupListBoxItem}"
+                        ItemsPanel="{TemplateBinding ItemsPanel}" />
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+	<ControlTheme x:Key="RadioGroupListBoxItem" TargetType="ListBoxItem">
+		<Setter Property="ListBoxItem.HorizontalAlignment" Value="Left" />
+		<Setter Property="ListBoxItem.VerticalAlignment" Value="Top" />
+		<Setter Property="ListBoxItem.Cursor" Value="Hand" />
+		<Setter Property="ListBoxItem.HorizontalContentAlignment" Value="Left" />
+		<Setter Property="ListBoxItem.VerticalContentAlignment" Value="Center" />
+		
+		<Setter Property="ListBoxItem.CornerRadius" Value="3" />
+		
+		<Setter Property="ListBoxItem.BorderBrush" Value="{DynamicResource SukiPrimaryColor10}" />
+		<Setter Property="ListBoxItem.Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<Border
+                    Name="RootBorder"
+                    Margin="{TemplateBinding Margin}"
+                    Padding="{TemplateBinding Padding}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
+					<Grid ColumnDefinitions="Auto,*">
+						<Grid Margin="0,2,8,0"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+							<Ellipse
+                                Name="OuterEllipse"
+                                Width="16"
+                                Height="16"
+                                Fill="{DynamicResource SukiPrimaryColor0}"
+                                Stroke="{DynamicResource SukiText}"
+                                StrokeThickness="1"
+                                UseLayoutRounding="False" />
+
+							<Ellipse
+                                Name="CheckGlyph"
+                                Width="6"
+                                Height="6"
+                                Fill="White"
+                                Opacity="0"
+                                Stroke="{DynamicResource SukiPrimaryColor}"
+                                StrokeThickness="0"
+                                UseLayoutRounding="False" />
+						</Grid>
+
+						<ContentPresenter
+                            Name="PART_ContentPresenter"
+                            Grid.Column="1"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            Foreground="{TemplateBinding Foreground}"
+                            RecognizesAccessKey="True"     
+							 TextElement.FontSize="{TemplateBinding FontSize}"
+                            TextElement.Foreground="{DynamicResource SukiText}" />
+					</Grid>
+				</Border>
+
+			</ControlTemplate>
+		</Setter>
+
+
+		<!--  Unchecked State  -->
+		<Style Selector="^ /template/ Ellipse#OuterEllipse">
+			<Setter Property="Stroke" Value="{DynamicResource SukiText}" />
+			<Setter Property="Fill" Value="{DynamicResource SukiPrimaryColor0}" />
+		</Style>
+		<Style Selector="^ /template/ Ellipse#CheckGlyph">
+			<Setter Property="Opacity" Value="0" />
+		</Style>
+
+		<!--  Unchecked Pointerover State  -->
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Ellipse#OuterEllipse">
+				<Setter Property="Stroke"
+                        Value="{DynamicResource SukiPrimaryColor75}" />
+				<Setter Property="Fill" Value="{DynamicResource SukiPrimaryColor0}" />
+			</Style>
+			<Style Selector="^ /template/ Ellipse#CheckGlyph">
+				<Setter Property="Opacity" Value="0" />
+			</Style>
+		</Style>
+
+		<!--  Unchecked Pressed State  --><!--
+		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ Ellipse#OuterEllipse">
+				<Setter Property="Stroke" Value="{DynamicResource ListBoxItemRadioGroupUncheckIconPressedBorderBrush}" />
+				<Setter Property="Fill" Value="{DynamicResource ListBoxItemRadioGroupUncheckIconPressedBackground}" />
+			</Style>
+			<Style Selector="^ /template/ Ellipse#CheckGlyph">
+				<Setter Property="Opacity" Value="0" />
+			</Style>
+		</Style>-->
+
+	
+
+		<!--  Checked State  -->
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Ellipse#OuterEllipse">
+				<Setter Property="Stroke" Value="{DynamicResource SukiPrimaryColor}" />
+				<Setter Property="Fill" Value="{DynamicResource SukiPrimaryColor75}" />
+			</Style>
+			<Style Selector="^ /template/ Ellipse#CheckGlyph">
+				<Setter Property="Opacity" Value="1" />
+				
+			</Style>
+
+			<!--  Checked Pointerover State  -->
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Ellipse#OuterEllipse">
+					<Setter Property="Stroke"
+                            Value="{DynamicResource SukiPrimaryColor}" />
+					<Setter Property="Fill"
+                            Value="{DynamicResource SukiPrimaryColor75}" />
+				</Style>
+				<Style Selector="^ /template/ Ellipse#CheckGlyph">
+					<Setter Property="Opacity" Value="1" />
+					
+				</Style>
+			</Style>
+
+			<!--  Checked Pressed State  --><!--
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ Ellipse#OuterEllipse">
+					<Setter Property="Stroke"
+                            Value="{DynamicResource ListBoxItemRadioGroupCheckIconPressedBorderBrush}" />
+					<Setter Property="Fill" Value="{DynamicResource ListBoxItemRadioGroupCheckIconPressedBackground}" />
+				</Style>
+				<Style Selector="^ /template/ Ellipse#CheckGlyph">
+					<Setter Property="Opacity" Value="1" />
+				</Style>
+			</Style>-->
+
+			<!--  Checked Disabled State  -->
+		
+		</Style>
+	</ControlTheme>
+
+
+	<ControlTheme x:Key="ButtonRadioGroupListBox"
+                  BasedOn="{StaticResource RadioGroupListBox}"
+                  TargetType="ListBox">
+		<Setter Property="ListBox.ItemContainerTheme" Value="{DynamicResource ButtonRadioGroupListBoxItem}" />
+		
+	</ControlTheme>
+	<ControlTheme x:Key="ButtonRadioGroupListBoxItem" TargetType="ListBoxItem">
+		<Setter Property="ListBoxItem.CornerRadius" Value="3" />
+		<Setter Property="ListBoxItem.VerticalContentAlignment" Value="Center" />
+		<Setter Property="ListBoxItem.Margin" Value="2" />
+		<Setter Property="ListBoxItem.Cursor" Value="Hand" />
+		<Setter Property="ListBoxItem.FontWeight" Value="600" />
+		<Setter Property="ListBoxItem.FontSize" Value="14" />
+		<Setter Property="ListBoxItem.Padding" Value="16,4" />
+	
+		<Setter Property="ListBoxItem.Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<ContentPresenter
+                    x:Name="PART_ContentPresenter"
+                    Margin="{TemplateBinding Margin}"
+                    Padding="{TemplateBinding Padding}"
+                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Content="{TemplateBinding Content}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    RecognizesAccessKey="True"
+                    TextElement.FontSize="{TemplateBinding FontSize}"
+                    TextElement.FontWeight="{TemplateBinding FontWeight}"
+                    UseLayoutRounding="False" />
+			</ControlTemplate>
+		</Setter>
+		<Setter Property="ListBoxItem.Background" Value="Transparent" />
+		<Style Selector="^:pointerover">
+			<Setter Property="Background"
+                    Value="{DynamicResource SukiPrimaryColor25}" />
+		</Style>
+	
+		<Style Selector="^:selected">
+			<Setter Property="Background"
+                    Value="{DynamicResource SukiPrimaryColor25}" />
+			<Setter Property="Foreground"
+                    Value="{DynamicResource SukiText}" />
+			
+		</Style>
+		<Style Selector="^.Small">
+			<Setter Property="FontSize" Value="12" />
+			<Setter Property="Padding" Value="16 2" />
+		</Style>
+		<Style Selector="^.Large">
+			<Setter Property="FontSize" Value="14" />
+			<Setter Property="Padding" Value="24 6" />
+		</Style>
+	</ControlTheme>
+
+
+	<ControlTheme x:Key="CardRadioGroupListBox"
+                  BasedOn="{StaticResource RadioGroupListBox}"
+                  TargetType="ListBox">
+		<Setter Property="ListBox.ItemContainerTheme" Value="{DynamicResource CardRadioGroupListBoxItem}" />
+	</ControlTheme>
+	<ControlTheme x:Key="CardRadioGroupListBoxItem" TargetType="ListBoxItem">
+		<Setter Property="ListBoxItem.Padding" Value="16 12" />
+		<Setter Property="ListBoxItem.BorderThickness" Value="1" />
+		<Setter Property="ListBoxItem.CornerRadius" Value="3" />
+		<Setter Property="ListBoxItem.Cursor" Value="Hand" />
+		<Setter Property="ListBoxItem.HorizontalAlignment" Value="Left" />
+		<Setter Property="ListBoxItem.VerticalAlignment" Value="Center" />
+		<Setter Property="ListBoxItem.HorizontalContentAlignment" Value="Left" />
+		<Setter Property="ListBoxItem.VerticalContentAlignment" Value="Center" />
+		<Setter Property="ListBoxItem.Background" Value="Transparent" />
+		<Setter Property="ListBoxItem.FontSize" Value="14" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<Border
+                    Name="RootBorder"
+                    Margin="{TemplateBinding Margin}"
+                    Padding="{TemplateBinding Padding}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
+					<Grid
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        ColumnDefinitions="Auto,*">
+						<Grid Margin="0 2 8 0" VerticalAlignment="Top">
+							<Ellipse
+                                Name="OuterEllipse"
+                                Width="16"
+                                Height="16"
+                                Fill="{DynamicResource SukiPrimaryColor0}"
+                                Stroke="{DynamicResource SukiText}"
+                                StrokeThickness="1"
+                                UseLayoutRounding="False" />
+
+							<Ellipse
+                                Name="CheckGlyph"
+                                Width="6"
+                                Height="6"
+                                Fill="White"
+                                Opacity="0"
+                                Stroke="{DynamicResource SukiPrimaryColor}"
+                                StrokeThickness="0"
+                                UseLayoutRounding="False" />
+						</Grid>
+
+						<ContentPresenter
+                            Name="PART_ContentPresenter"
+                            Grid.Column="1"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            Foreground="{TemplateBinding Foreground}"
+                            RecognizesAccessKey="True"
+                            
+                            TextElement.Foreground="{DynamicResource SukiText}" />
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<!--  Unchecked State  -->
+		<Style Selector="^ /template/ Ellipse#OuterEllipse">
+			<Setter Property="Stroke" Value="{DynamicResource SukiPrimaryColor75}" />
+			<Setter Property="Fill" Value="{DynamicResource SukiPrimaryColor0}" />
+		</Style>
+		<Style Selector="^ /template/ Ellipse#CheckGlyph">
+			<Setter Property="Opacity" Value="0" />
+		</Style>
+
+		<!--  Unchecked Pointerover State  -->
+		<Style Selector="^:pointerover">
+			<Setter Property="Background"
+                    Value="{DynamicResource SukiPrimaryColor10}" />
+			<Style Selector="^ /template/ Ellipse#OuterEllipse">
+				<Setter Property="Stroke"
+                        Value="{DynamicResource SukiPrimaryColor75}" />
+			</Style>
+			<Style Selector="^ /template/ Ellipse#CheckGlyph">
+				<Setter Property="Opacity" Value="0" />
+			</Style>
+		</Style>
+
+		<!--  Unchecked Pressed State  -->
+		<Style Selector="^:pressed">
+			<Setter Property="Background"
+                    Value="{DynamicResource SukiPrimaryColor10}" />
+			<Style Selector="^ /template/ Ellipse#OuterEllipse">
+				<Setter Property="Stroke" Value="{DynamicResource SukiPrimaryColor75}" />
+			</Style>
+			<Style Selector="^ /template/ Ellipse#CheckGlyph">
+				<Setter Property="Opacity" Value="0" />
+			</Style>
+		</Style>
+
+		
+
+		<!--  Checked State  -->
+		<Style Selector="^:selected">
+			<Setter Property="Background"
+                    Value="{DynamicResource SukiPrimaryColor10}" />
+			<Setter Property="BorderBrush"
+                    Value="{DynamicResource SukiPrimaryColor}" />
+			<Style Selector="^ /template/ Ellipse#OuterEllipse">
+				<Setter Property="Stroke" Value="{DynamicResource SukiPrimaryColor}" />
+				<Setter Property="Fill" Value="{DynamicResource SukiPrimaryColor75}" />
+			</Style>
+			<Style Selector="^ /template/ Ellipse#CheckGlyph">
+				<Setter Property="Opacity" Value="1" />
+			</Style>
+
+			<!--  Checked Pointerover State  -->
+			<Style Selector="^:pointerover">
+				<Setter Property="BorderBrush"
+                        Value="{DynamicResource SukiPrimaryColor50}" />
+				<Style Selector="^ /template/ Ellipse#OuterEllipse">
+					<Setter Property="Stroke"
+                            Value="{DynamicResource SukiPrimaryColor70}" />
+					<Setter Property="Fill"
+                            Value="{DynamicResource SukiPrimaryColor75}" />
+				</Style>
+				<Style Selector="^ /template/ Ellipse#OuterEllipse">
+					<Setter Property="Stroke"
+                            Value="{DynamicResource SukiPrimaryColor70}" />
+					<Setter Property="Fill"
+                            Value="{DynamicResource SukiPrimaryColor75}" />
+				</Style>
+				<Style Selector="^ /template/ Ellipse#CheckGlyph">
+					<Setter Property="Opacity" Value="1" />
+				</Style>
+			</Style>
+
+			
+
+			
+		</Style>
+	</ControlTheme>
+
+
+	<ControlTheme x:Key="PureCardRadioGroupListBox"
+                  BasedOn="{StaticResource RadioGroupListBox}"
+                  TargetType="ListBox">
+		<Setter Property="ListBox.ItemContainerTheme" Value="{DynamicResource PureCardRadioGroupListBoxItem}" />
+	</ControlTheme>
+	<ControlTheme x:Key="PureCardRadioGroupListBoxItem" TargetType="ListBoxItem">
+		<Setter Property="ListBoxItem.CornerRadius" Value="3" />
+		<Setter Property="ListBoxItem.Cursor" Value="Hand" />
+		<Setter Property="ListBoxItem.VerticalContentAlignment" Value="Center" />
+		<Setter Property="ListBoxItem.BorderThickness" Value="1" />
+		
+		<Setter Property="ListBoxItem.Padding" Value="16 12" />
+		<Setter Property="ListBoxItem.Background" Value="Transparent" />
+		<Setter Property="ListBoxItem.Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<ContentPresenter
+                    x:Name="PART_ContentPresenter"
+                    Margin="{TemplateBinding Margin}"
+                    Padding="{TemplateBinding Padding}"
+                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Content="{TemplateBinding Content}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    RecognizesAccessKey="True"
+                    UseLayoutRounding="False" />
+			</ControlTemplate>
+		</Setter>
+		<Setter Property="ListBoxItem.BorderBrush"
+                Value="{DynamicResource SukiPrimaryColor0}" />
+		<Style Selector="^:pointerover">
+			<Setter Property="Background"
+                    Value="{DynamicResource SukiPrimaryColor10}" />
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Background"
+                    Value="{DynamicResource SukiPrimaryColor10}" />
+		</Style>
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource ListBoxItemDisabledForeground}" />
+			</Style>
+		</Style>
+		<Style Selector="^:selected">
+			<Setter Property="Background"
+                    Value="{DynamicResource SukiPrimaryColor10}" />
+			<Setter Property="BorderBrush"
+                    Value="{DynamicResource SukiPrimaryColor50}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="BorderBrush"
+                        Value="{DynamicResource SukiPrimaryColor10}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="BorderBrush"
+                        Value="{DynamicResource SukiPrimaryColor50}" />
+			</Style>
+		
+		</Style>
+	</ControlTheme>
+
+
+	<!-- CheckGroup -->
+	<ControlTheme x:Key="CheckGroupListBox"
+                  BasedOn="{StaticResource RadioGroupListBox}"
+                  TargetType="ListBox">
+		<Setter Property="ListBox.ItemContainerTheme" Value="{DynamicResource CheckGroupListBoxItem}" />
+	</ControlTheme>
+	<ControlTheme x:Key="CheckGroupListBoxItem" TargetType="ListBoxItem">
+		<Setter Property="Padding" Value="8,0,0,0" />
+		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="VerticalAlignment" Value="Top" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		
+		<Setter Property="CornerRadius" Value="3" />
+		<Setter Property="MinHeight" Value="32" />
+		<Setter Property="Foreground" Value="{DynamicResource SukiText}" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="{DynamicResource SukiText}" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<Border
+                    x:Name="RootBorder"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
+					<Grid x:Name="RootGrid" ColumnDefinitions="Auto,*">
+						<Grid
+                            Grid.Column="0"
+                            Margin="0,0,0,0"
+                            VerticalAlignment="Center">
+							<Border
+                                x:Name="NormalRectangle"
+                                Width="16"
+                                Height="16"
+                                Background="{DynamicResource Transparent}"
+                                BorderBrush="{DynamicResource SukiText}"
+                                BorderThickness="1"
+                                CornerRadius="{TemplateBinding CornerRadius}"
+                                UseLayoutRounding="False" />
+							<PathIcon
+                                Name="CheckGlyph"
+                                Width="10"
+                                Height="10"
+                                Foreground="White" />
+						</Grid>
+						<ContentPresenter
+                            x:Name="ContentPresenter"
+                            Grid.Column="1"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="Center"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            IsVisible="{TemplateBinding Content,Converter={x:Static ObjectConverters.IsNotNull}}"
+                            RecognizesAccessKey="True"
+                            TextWrapping="Wrap" />
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<!--  Unchecked Pointerover State  -->
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor50}" />
+				<Setter Property="Background" Value="{DynamicResource SukiPrimaryColor0}" />
+			</Style>
+		</Style>
+
+		<!--  Unchecked Pressed State  -->
+		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor75}" />
+				<Setter Property="Background" Value="{DynamicResource SukiPrimaryColor75}" />
+			</Style>
+		</Style>
+
+		
+
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor75}" />
+				<Setter Property="Background" Value="{DynamicResource SukiPrimaryColor75}" />
+			</Style>
+
+			<Style Selector="^ /template/ PathIcon#CheckGlyph">
+				<Setter Property="Data" Value="{DynamicResource ListBoxItemCheckCheckGlyph}" />
+				<Setter Property="Opacity" Value="1" />
+			</Style>
+
+			<!--  Checked Pointerover State  -->
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush"
+                            Value="{DynamicResource SukiPrimaryColor0}" />
+					<Setter Property="Background"
+                            Value="{DynamicResource SukiPrimaryColor50}" />
+				</Style>
+			</Style>
+
+			<!--  Checked Pressed State  -->
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor75}" />
+					<Setter Property="Background" Value="{DynamicResource SukiPrimaryColor75}" />
+				</Style>
+			</Style>
+
+			<!--  Checked Disabled State  -->
+			
+		</Style>
+
+		<Style Selector="^:indeterminate">
+			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor0}" />
+				<Setter Property="Background" Value="{DynamicResource SukiPrimaryColor10}" />
+			</Style>
+
+			<Style Selector="^ /template/ PathIcon#CheckGlyph">
+				<Setter Property="Data" Value="{DynamicResource ListBoxItemCheckIndeterminateGlyph}" />
+				<Setter Property="Opacity" Value="1" />
+			</Style>
+
+			<!--  Checked Pointerover State  -->
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush"
+                            Value="{DynamicResource SukiPrimaryColor0}" />
+					<Setter Property="Background"
+                            Value="{DynamicResource SukiPrimaryColor50}" />
+				</Style>
+			</Style>
+
+			<!--  Checked Pressed State  -->
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor0}" />
+					<Setter Property="Background" Value="{DynamicResource SukiPrimaryColor75}" />
+				</Style>
+			</Style>
+
+		
+		</Style>
+	</ControlTheme>
+
+
+	<ControlTheme x:Key="CardCheckGroupListBox"
+                  BasedOn="{StaticResource RadioGroupListBox}"
+                  TargetType="ListBox">
+		<Setter Property="ListBox.ItemContainerTheme" Value="{DynamicResource CardCheckGroupListBoxItem}" />
+	</ControlTheme>
+	<ControlTheme x:Key="CardCheckGroupListBoxItem" TargetType="ListBoxItem">
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Padding" Value="16" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="CornerRadius" Value="3" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="ListBoxItem.Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<Border
+                    Name="RootBorder"
+                    Padding="{TemplateBinding Padding}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
+					<Grid
+                        x:Name="RootGrid"
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        ColumnDefinitions="Auto,*">
+						<Grid Grid.Column="0" VerticalAlignment="Top">
+							<Border
+                                x:Name="NormalRectangle"
+                                Width="16"
+                                Height="16"
+                                Background="Transparent"
+                                BorderBrush="{DynamicResource SukiText}"
+                                BorderThickness="1"
+                                CornerRadius="3"
+                                UseLayoutRounding="False" />
+							<PathIcon
+                                Name="CheckGlyph"
+                                Width="10"
+                                Height="10"
+                                Foreground="White" />
+
+						</Grid>
+						<ContentPresenter
+                            x:Name="ContentPresenter"
+                            Grid.Column="1"
+                            Margin="8,0,0,0"
+                            VerticalAlignment="Center"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            IsVisible="{TemplateBinding Content,
+                                                        Converter={x:Static ObjectConverters.IsNotNull}}"
+                            RecognizesAccessKey="True"
+                            TextWrapping="Wrap" />
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<!--  Unchecked Pointerover State  -->
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor50}" />
+			</Style>
+			<Style Selector="^ /template/ Border#RootBorder">
+				<Setter Property="Background" Value="{DynamicResource SukiPrimaryColor0}" />
+			</Style>
+		</Style>
+
+		<!--  Unchecked Pressed State  -->
+		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor75}" />
+			</Style>
+			<Style Selector="^ /template/ Border#RootBorder">
+				<Setter Property="Background" Value="{DynamicResource SukiPrimaryColor10}" />
+			</Style>
+		</Style>
+
+		<!--  Unchecked Disabled state  -->
+		
+
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#RootBorder">
+				<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor75}" />
+				<Setter Property="Background" Value="{DynamicResource SukiPrimaryColor10}" />
+			</Style>
+			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor75}" />
+				<Setter Property="Background" Value="{DynamicResource SukiPrimaryColor75}" />
+			</Style>
+
+			<Style Selector="^ /template/ PathIcon#CheckGlyph">
+				<Setter Property="Data" Value="{DynamicResource ListBoxItemCheckCheckGlyph}" />
+				<Setter Property="Opacity" Value="1" />
+			</Style>
+
+			<!--  Checked Pointerover State  -->
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush"
+                            Value="{DynamicResource SukiPrimaryColor50}" />
+					<Setter Property="Background"
+                            Value="{DynamicResource SukiPrimaryColor10}" />
+				</Style>
+				<Style Selector="^ /template/ Border#RootBorder">
+					<Setter Property="BorderBrush"
+                            Value="{DynamicResource SukiPrimaryColor50}" />
+				</Style>
+			</Style>
+
+			<!--  Checked Pressed State  -->
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor75}" />
+					<Setter Property="Background" Value="{DynamicResource SukiPrimaryColor75}" />
+				</Style>
+				<Style Selector="^ /template/ Border#RootBorder">
+					<Setter Property="BorderBrush"
+                            Value="{DynamicResource SukiPrimaryColor10}" />
+				</Style>
+			</Style>
+
+			<!--  Checked Disabled State  -->
+			
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>
